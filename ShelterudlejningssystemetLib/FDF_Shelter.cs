@@ -12,7 +12,8 @@ namespace ShelterudlejningssystemetLib
         // Instansfelter
         private int _shelterId;
         private string _shelterNavn;
-        private int _lokation;
+        private string _lokation;
+        private int _postNummer;
         private int _størrelse;
 
 
@@ -22,16 +23,18 @@ namespace ShelterudlejningssystemetLib
         {
             ShelterId = 0;
             ShelterNavn = "";
-            Lokation = 0;
+            Lokation = "";
             Størrelse = 0;
+            PostNummer = 0;
         }
 
-        public FDF_Shelter(int shelterid, string shelternavn, int lokation, int størrelse)
+        public FDF_Shelter(int shelterId, string shelterNavn, string lokation, int størrelse, int postNummer)
         {
-            ShelterId = shelterid;
-            ShelterNavn = shelternavn;
+            ShelterId = shelterId;
+            ShelterNavn = shelterNavn;
             Lokation = lokation;
             Størrelse = størrelse;
+            PostNummer = postNummer;
 
         }
 
@@ -49,10 +52,16 @@ namespace ShelterudlejningssystemetLib
             set { _shelterNavn = value; }
         }
 
-        public int Lokation
+        public string Lokation
         {
             get { return _lokation; }
             set { _lokation = value; } 
+        }
+
+        public int PostNummer
+        {
+            get { return _postNummer; }
+            set { _postNummer = value; }
         }
 
         public int Størrelse
@@ -63,7 +72,7 @@ namespace ShelterudlejningssystemetLib
 
         public override string ToString()
         {
-            return "ShelterId: " + ShelterId + "ShelterNavn: " + ShelterNavn + " Lokation: " + Lokation + " Størrelse: " + Størrelse;
+            return "ShelterId: " + ShelterId + "ShelterNavn: " + ShelterNavn + " Lokation: " + Lokation + " Størrelse: " + Størrelse + "PostNummer: " + PostNummer;
         }
     }
 }
