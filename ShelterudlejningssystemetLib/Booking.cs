@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ShelterudlejningssystemetLib
 {
-    internal class Booking
+    public class Booking
     {
         private int _bookingId;
         private DateTime _startDato;

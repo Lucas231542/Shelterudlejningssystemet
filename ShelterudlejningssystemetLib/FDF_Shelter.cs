@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ShelterudlejningssystemetLib
 {
-    internal class FDF_Shelter
+    public class FDF_Shelter
     {
     }
 }
