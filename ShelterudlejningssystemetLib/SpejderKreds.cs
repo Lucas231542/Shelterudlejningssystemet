@@ -1,6 +1,6 @@
 ﻿namespace ShelterudlejningssystemetLib
 {
-    public class SpiderKreds
+    public class SpejderKreds
     {
 
     }
