@@ -16,6 +16,7 @@ namespace ShelterudlejningssystemetLib
         private int _størrelse;
 
 
+
         // Konstruktør
         public FDF_Shelter()
         {
@@ -39,25 +40,25 @@ namespace ShelterudlejningssystemetLib
         public int ShelterId
         {
             get { return _shelterId; }
-            set { ShelterId = value; }
+            set { _shelterId = value; }
         }
 
         public string ShelterNavn
         {
             get { return _shelterNavn; }
-            set { ShelterNavn = value; }
+            set { _shelterNavn = value; }
         }
 
         public int Lokation
         {
             get { return _lokation; }
-            set { Lokation = value; } 
+            set { _lokation = value; } 
         }
 
         public int Størrelse
         {
             get { return _størrelse; }
-            set { Størrelse =value; }
+            set { _størrelse =value; }
         }
 
         public override string ToString()
