@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ShelterudlejningssystemetLib
 {
-    internal class Blog_opslag
+    public class Blog_opslag
     {
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ShelterudlejningssystemetLib
 {
-    internal class Log
+    public class Log
     {
     }
 }
