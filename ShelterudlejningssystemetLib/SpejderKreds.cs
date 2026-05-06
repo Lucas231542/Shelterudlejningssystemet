@@ -13,13 +13,13 @@
         public SpejderKreds()
         {
             KredsID = 0;
-            Name= "";
+            Name = "";
             Størrelse = 0;
         }
         public SpejderKreds(int kredsID, string name, int størrelse)
         {
             KredsID = kredsID;
-            name = name;
+            Name = name;
             Størrelse = størrelse;
         }
 
@@ -35,7 +35,14 @@
         public string Name
         {
             get { return _name; }
-            set { _name = value; }
+            set
+            {
+                if (value.Length < 0)
+                {
+                    throw new ArgumentException("Name cannot be null or empty.");
+                }
+                _name = value;
+            }
         }
 
         public int Størrelse
@@ -47,8 +54,9 @@
 
         public override string ToString()
         {
-            return "KredsID: " + KredsID + "Name: " + Name + "Størrelse: " + Størrelse;
-        }
+            return $"KredsID: {KredsID}, Name: {Name}, Størrelse: {Størrelse}";
 
+
+        }
     }
 }
