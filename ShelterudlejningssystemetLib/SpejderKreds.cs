@@ -9,6 +9,7 @@
 
 
 
+
         // konstruktør
         public SpejderKreds()
         {
@@ -48,7 +49,12 @@
         public int Størrelse
         {
             get { return _Størrelse; }
-            set { _Størrelse = value; }
+            set {
+                if (value < 0)
+                {
+                    throw new ArgumentException("Størrelse cannot be negative.");
+                }
+                _Størrelse = value; }
         }
 
 
