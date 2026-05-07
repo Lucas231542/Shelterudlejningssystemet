@@ -12,9 +12,6 @@ namespace ShelterudlejningssystemetLib
         private int _id;
         private string _navn;
         private int _kredsId;
-        
-
-
 
 
         // Konstruktør
