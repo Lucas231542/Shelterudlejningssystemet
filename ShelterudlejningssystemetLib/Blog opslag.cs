@@ -8,59 +8,59 @@ namespace ShelterudlejningssystemetLib
     {
         // instans felter
 
-        private int _InlægID;
+        private int _id;
         private string _titel;
-        private string _Tekst;
-        private DateTime _Dato;
+        private string _tekst;
+        private DateTime _dato;
 
         // konstruktører
 
         public Blog_opslag()
 
         {
-            _InlægID = 0;
+            _id = 0;
             _titel = "";
-            _Tekst = "";
-            _Dato = DateTime.Now;
+            _tekst = "";
+            _dato = DateTime.Now;
 
         }
 
-        public Blog_opslag(int InlægID, string titel, string Tekst, DateTime Dato)
+        public Blog_opslag(int id, string titel, string tekst, DateTime dato)
         {
-            _InlægID = InlægID;
+            _id = id;
             _titel = titel;
-            _Tekst = Tekst;
-            _Dato = Dato;
+            _tekst = tekst;
+            _dato = dato;
 
         }
 
         // propeerties
         public int InlægID
         {
-            get { return _InlægID; }
-            set { _InlægID = value; }
+            get { return _id; }
+            set { _id = value; }
         }
-        public string titel
+        public string Titel
         {
             get { return _titel; }
             set { _titel = value; }
         }
         public string Tekst
         {
-            get { return _Tekst; }
-            set { _Tekst = value; }
+            get { return _tekst; }
+            set { _tekst = value; }
         }
         public DateTime Dato
         {
-            get { return _Dato; }
-            set { _Dato = value; }
+            get { return _dato; }
+            set { _dato = value; }
         }
 
 
         // metoder 
         public override string ToString()
         {
-            return "InlægID: InlægID= " + InlægID + ", Titel= " + titel + ", Tekst= " + Tekst +
+            return "InlægID: InlægID= " + InlægID + ", Titel= " + Titel + ", Tekst= " + Tekst +
                 ", Dato= " + Dato;
         }
 
