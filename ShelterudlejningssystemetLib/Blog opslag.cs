@@ -6,11 +6,8 @@ namespace ShelterudlejningssystemetLib
 {
     public class Blog_opslag
     {
-        
     }
-
 }
-    
-        
 
-       
+
+
