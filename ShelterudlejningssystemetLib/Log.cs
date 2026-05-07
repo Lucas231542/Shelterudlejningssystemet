@@ -1,71 +1,56 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
+using System.Globalization;
 using System.Text;
 
 namespace ShelterudlejningssystemetLib
+//Aleks Log 
 {
     public class Log
     {
-
-        // instans felter
-
-        private int _InlægID;
-        private string _Titel;
-        private string _Tekst;
-        private  DateTime _Dato;
-
-        // konstruktører
+        private int _id;
+        private DateTime _startdato;
+        private DateTime _slutdato;
+        private string _tekst;
 
         public Log()
-
         {
-            _InlægID = 0;
-            _Titel = "";
-            _Tekst = "";
-            _Dato = DateTime.Now; 
-
+            Id = 0;
+            Startdato = DateTime.Now;
+            Slutdato = DateTime.Now;
+            Tekst = "";
+        }
+        public Log(int id, DateTime startdato, DateTime slutdato, string tekst)
+        {
+            Id = id;
+            Startdato = startdato;
+            Slutdato = slutdato;
+            Tekst = tekst;
+        }
+        public int Id
+        {
+            get { return _id; }
+            set { _id = value; }
+        }
+        public DateTime Startdato
+        {
+            get { return _startdato; }
+            set { _startdato = value; }
+        }
+        public DateTime Slutdato
+        {
+            get { return _slutdato; }
+            set { _slutdato = value; }
         }
 
-        public Log (int InlægID, string Titel, string Tekst, DateTime Dato)
-        {
-            _InlægID = InlægID;
-            _Titel = Titel;
-            _Tekst = Tekst;
-            _Dato = Dato;
-            
-        }
-
-        // propeerties
-        public int InlægID
-        {
-            get { return _InlægID; }
-            set { _InlægID = value; }
-        }
-        public string Titel
-        {
-            get { return _Titel; }
-            set { _Titel = value; }
-        }
         public string Tekst
         {
-            get { return _Tekst; }
-            set { _Tekst = value; }
+            get { return _tekst; }
+            set { _tekst = value; }
         }
-        public DateTime Dato
-        {
-            get { return _Dato; }
-            set { _Dato = value; }
-        }
-   
-
-        // metoder 
         public override string ToString()
         {
-            return "InlægID: InlægID= " + InlægID + ", Titel= " + Titel + ", Tekst= " + Tekst +
-                ", Dato= " + Dato;
+            return "Id:" + Id + ", Startdato:" + Startdato + ", Slutdato:" + Slutdato + ", Tekst:" + Tekst;  
         }
-
-
     }
 }
