@@ -34,6 +34,10 @@ namespace ShelterudlejningssystemetLib
 
         }
 
+        // liste over alle Blog opslag
+
+        private static List<Blog_opslag> _alleBookinger = new List<Blog_opslag>();
+
         // propeerties
         public int Id
         {
