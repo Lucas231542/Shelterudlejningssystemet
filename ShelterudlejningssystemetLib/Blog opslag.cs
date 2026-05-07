@@ -9,7 +9,7 @@ namespace ShelterudlejningssystemetLib
         // instans felter
 
         private int _InlægID;
-        private string _Titel;
+        private string _titel;
         private string _Tekst;
         private DateTime _Dato;
 
@@ -19,16 +19,16 @@ namespace ShelterudlejningssystemetLib
 
         {
             _InlægID = 0;
-            _Titel = "";
+            _titel = "";
             _Tekst = "";
             _Dato = DateTime.Now;
 
         }
 
-        public Blog_opslag(int InlægID, string Titel, string Tekst, DateTime Dato)
+        public Blog_opslag(int InlægID, string titel, string Tekst, DateTime Dato)
         {
             _InlægID = InlægID;
-            _Titel = Titel;
+            _titel = titel;
             _Tekst = Tekst;
             _Dato = Dato;
 
@@ -40,10 +40,10 @@ namespace ShelterudlejningssystemetLib
             get { return _InlægID; }
             set { _InlægID = value; }
         }
-        public string Titel
+        public string titel
         {
-            get { return _Titel; }
-            set { _Titel = value; }
+            get { return _titel; }
+            set { _titel = value; }
         }
         public string Tekst
         {
@@ -60,7 +60,7 @@ namespace ShelterudlejningssystemetLib
         // metoder 
         public override string ToString()
         {
-            return "InlægID: InlægID= " + InlægID + ", Titel= " + Titel + ", Tekst= " + Tekst +
+            return "InlægID: InlægID= " + InlægID + ", Titel= " + titel + ", Tekst= " + Tekst +
                 ", Dato= " + Dato;
         }
 
