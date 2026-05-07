@@ -1,14 +1,15 @@
-﻿namespace ShelterudlejningssystemetLib
+﻿using System.Security.Cryptography.X509Certificates;
+
+namespace ShelterudlejningssystemetLib
 {
     public class SpejderKreds
     {
         // instans felter 
-        private int _KredsID;
+        private int _kredsID;
         private string _name;
-        private int _Størrelse;
-
-
-
+        private int _størrelse;
+        
+       
 
         // konstruktør
         public SpejderKreds()
@@ -16,12 +17,15 @@
             KredsID = 0;
             Name = "";
             Størrelse = 0;
+          
         }
+
         public SpejderKreds(int kredsID, string name, int størrelse)
         {
             KredsID = kredsID;
             Name = name;
             Størrelse = størrelse;
+          
         }
 
 
@@ -29,8 +33,8 @@
 
         public int KredsID
         {
-            get { return _KredsID; }
-            set { _KredsID = value; }
+            get { return _kredsID; }
+            set { _kredsID = value; }
         }
 
         public string Name
@@ -48,21 +52,26 @@
 
         public int Størrelse
         {
-            get { return _Størrelse; }
+            get { return _størrelse; }
             set {
                 if (value < 0)
                 {
                     throw new ArgumentException("Størrelse cannot be negative.");
                 }
-                _Størrelse = value; }
+                _størrelse = value; }
         }
 
+      
 
+        //metoder
         public override string ToString()
         {
             return $"KredsID: {KredsID}, Name: {Name}, Størrelse: {Størrelse}";
 
 
         }
+
+
+
     }
 }
