@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 
+// Blog oplsag Ahmad 
+
 namespace ShelterudlejningssystemetLib
 {
     public class Blog_opslag
