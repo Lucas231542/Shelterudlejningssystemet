@@ -39,7 +39,7 @@ namespace ShelterudlejningssystemetLib
         private static List<Blog_opslag> _alleBlog_opslag = new List<Blog_opslag>();
 
 
-        // propeerties
+        // properties
         public int Id
         {
             get { return _id; }
