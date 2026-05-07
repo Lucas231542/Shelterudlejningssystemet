@@ -6,7 +6,25 @@ namespace ShelterudlejningssystemetLib
 {
     public class Blog
     {
+        // instans felter
+        private List<Blog_opslag> _begivenheder;
 
+        // konstruktør
+        public Blog()
+        {
+            _begivenheder = new List<Blog_opslag>();
+        }
+
+        public Blog(List<Blog_opslag> begivenheder)
+        {
+            _begivenheder = begivenheder;
+        }
+
+        public List<Blog_opslag> Begivenheder
+        {
+            get { return _begivenheder; }
+            set { _begivenheder = value; }
+        }
 
         // KredsLeder tilføje en begivenhed til kredsens blog
         public void AddEvent(Blog_opslag NewEvent)
