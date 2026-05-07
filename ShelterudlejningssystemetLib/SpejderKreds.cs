@@ -94,12 +94,13 @@ namespace ShelterudlejningssystemetLib
             }
            
         }
-
+        // KredsLeder hente alle begivenheder fra kredsens blog
         public List<Blog_opslag> ListAll()
         {
             return new List<Blog_opslag>(_begivenheder);
         }
 
+        // KredsLeder hente en begivenhed fra kredsens blog
         public Blog_opslag GetEvent(int BlogId)
         {
             Blog_opslag resBegivenhed = null; // Return null if not found
@@ -113,6 +114,7 @@ namespace ShelterudlejningssystemetLib
             return resBegivenhed;
         }
 
+        // opdatere en begivenhed i kredsens blog
         public Blog_opslag UpdateBegivenhed(int BlogId, Blog_opslag updatedBegivenhed)
         {
             Blog_opslag begivenhed = GetEvent(BlogId);
