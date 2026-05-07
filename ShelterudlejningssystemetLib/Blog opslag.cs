@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 
+// Blog oplsag Ahmad 
+
 namespace ShelterudlejningssystemetLib
 {
     public class Blog_opslag
@@ -39,7 +41,7 @@ namespace ShelterudlejningssystemetLib
         private static List<Blog_opslag> _alleBlog_opslag = new List<Blog_opslag>();
 
 
-        // propeerties
+        // properties
         public int Id
         {
             get { return _id; }
