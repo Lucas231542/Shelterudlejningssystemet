@@ -105,7 +105,7 @@ namespace ShelterudlejningssystemetLib
             Blog_opslag resBegivenhed = null; // Return null if not found
             foreach (Blog_opslag b in _begivenheder)
             {
-                if (b.ID == BlogId)
+                if (b.Id == BlogId)
                 {
                     return b; // Return the found event
                 }
@@ -118,7 +118,7 @@ namespace ShelterudlejningssystemetLib
             Blog_opslag begivenhed = GetEvent(BlogId);
             if (begivenhed != null)
             {
-                begivenhed.ID = updatedBegivenhed.Id;
+                begivenhed.Id = updatedBegivenhed.Id;
                 begivenhed.Titel = updatedBegivenhed.Titel;
                 begivenhed.Tekst = updatedBegivenhed.Tekst;
                 begivenhed.Dato = updatedBegivenhed.Dato;
