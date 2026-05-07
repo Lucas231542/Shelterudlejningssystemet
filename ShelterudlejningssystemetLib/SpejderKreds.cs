@@ -5,9 +5,9 @@ namespace ShelterudlejningssystemetLib
     public class SpejderKreds
     {
         // instans felter 
-        private int _KredsID;
+        private int _kredsID;
         private string _name;
-        private int _Størrelse;
+        private int _størrelse;
         
         private List<Blog_opslag> _begivenheder;
 
@@ -35,8 +35,8 @@ namespace ShelterudlejningssystemetLib
 
         public int KredsID
         {
-            get { return _KredsID; }
-            set { _KredsID = value; }
+            get { return _kredsID; }
+            set { _kredsID = value; }
         }
 
         public string Name
@@ -54,13 +54,13 @@ namespace ShelterudlejningssystemetLib
 
         public int Størrelse
         {
-            get { return _Størrelse; }
+            get { return _størrelse; }
             set {
                 if (value < 0)
                 {
                     throw new ArgumentException("Størrelse cannot be negative.");
                 }
-                _Størrelse = value; }
+                _størrelse = value; }
         }
 
         public List<Blog_opslag> Begivenheder
