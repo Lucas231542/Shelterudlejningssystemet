@@ -76,7 +76,6 @@ namespace ShelterudlejningssystemetLib
             }
         }
 
-        
         // Returnerer en liste over bookinger der endnu ikke er startet
         public static List<Booking> HentKommendeBookinger()
         {
@@ -99,15 +98,13 @@ namespace ShelterudlejningssystemetLib
             _alleBookinger.Add(booking);
         } 
         
-        
-        
         // Sletter en booking fra listen baseret på bookingId 
+
         public static void SletBooking(int bookingId)
         {
             _alleBookinger.RemoveAll(b => b.BookingId == bookingId);
         }
 
-        
         // Redigere en eksisterende booking med nye værdier 
         public static void RedigerBooking(int bookingId, DateTime nyStartDato, DateTime nySlutDato,
             int nyAntalMennekser)
