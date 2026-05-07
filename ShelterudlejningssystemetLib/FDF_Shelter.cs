@@ -15,7 +15,7 @@ namespace ShelterudlejningssystemetLib
         private string _lokation;
         private int _postNummer;
         private int _størrelse;
-
+        private List<Booking> _bookinger;
 
 
         // Konstruktør
@@ -26,6 +26,7 @@ namespace ShelterudlejningssystemetLib
             Lokation = "";
             Størrelse = 0;
             PostNummer = 0;
+            Bookinger = new List<Booking>();
         }
 
         public FDF_Shelter(int shelterId, string shelterNavn, string lokation, int størrelse, int postNummer)
@@ -55,7 +56,7 @@ namespace ShelterudlejningssystemetLib
         public string Lokation
         {
             get { return _lokation; }
-            set { _lokation = value; } 
+            set { _lokation = value; }
         }
 
         public int PostNummer
@@ -67,13 +68,28 @@ namespace ShelterudlejningssystemetLib
         public int Størrelse
         {
             get { return _størrelse; }
-            set { _størrelse =value; }
+            set { _størrelse = value; }
+        }
+
+
+        public List<Booking> Bookinger
+        {
+            get { return _bookinger; }
+            set { _bookinger = value; }
         }
 
         public override string ToString()
         {
             return "ShelterId: " + ShelterId + "ShelterNavn: " + ShelterNavn + " Lokation: " + Lokation + " Størrelse: " + Størrelse + "PostNummer: " + PostNummer;
         }
+
+        public void TilføjBooking(Booking booking) 
+        {
+            Bookinger.Add(booking);
+        }
+
+
+
     }
 }
 
