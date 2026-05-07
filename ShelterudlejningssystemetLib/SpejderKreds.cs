@@ -8,8 +8,8 @@ namespace ShelterudlejningssystemetLib
         private int _kredsID;
         private string _name;
         private int _størrelse;
-        
-       
+        private List<> _spejdere;
+
 
         // konstruktør
         public SpejderKreds()
@@ -69,6 +69,8 @@ namespace ShelterudlejningssystemetLib
 
 
         }
+
+
 
 
 
