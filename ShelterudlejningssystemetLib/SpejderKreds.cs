@@ -105,7 +105,7 @@ namespace ShelterudlejningssystemetLib
             Blog_opslag resBegivenhed = null; // Return null if not found
             foreach (Blog_opslag b in _begivenheder)
             {
-                if (b.Id == BlogId)
+                if (b.ID == BlogId)
                 {
                     return b; // Return the found event
                 }
