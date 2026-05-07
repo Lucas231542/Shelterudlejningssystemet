@@ -34,6 +34,11 @@ namespace ShelterudlejningssystemetLib
 
         }
 
+        // liste over alle Blog opslag
+
+        private static List<Blog_opslag> _alleBlog_opslag = new List<Blog_opslag>();
+
+
         // propeerties
         public int Id
         {
@@ -56,6 +61,11 @@ namespace ShelterudlejningssystemetLib
             set { _dato = value; }
         }
 
+        // Tilføjer en Blog opslag til listen over alle Blog opslag 
+        public static void TilføjBlog_opslag(Blog_opslag Blog_opslag)
+        {
+        _alleBlog_opslag.Add(Blog_opslag);
+        }
 
         // metoder 
         public override string ToString()
