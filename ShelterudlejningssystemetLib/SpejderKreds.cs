@@ -28,7 +28,6 @@ namespace ShelterudlejningssystemetLib
           
         }
 
-
         // properties
 
         public int KredsID
@@ -70,6 +69,8 @@ namespace ShelterudlejningssystemetLib
 
 
         }
+
+
 
 
 
