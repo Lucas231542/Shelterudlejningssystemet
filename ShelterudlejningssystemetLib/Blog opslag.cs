@@ -60,7 +60,7 @@ namespace ShelterudlejningssystemetLib
         // metoder 
         public override string ToString()
         {
-            return "InlægID: InlægID= " + InlægID + ", Titel= " + Titel + ", Tekst= " + Tekst +
+            return "InlægID: InlægID= " + ID + ", Titel= " + Titel + ", Tekst= " + Tekst +
                 ", Dato= " + Dato;
         }
 
