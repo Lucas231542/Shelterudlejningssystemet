@@ -35,7 +35,7 @@ namespace ShelterudlejningssystemetLib
         }
 
         // propeerties
-        public int InlægID
+        public int ID
         {
             get { return _id; }
             set { _id = value; }

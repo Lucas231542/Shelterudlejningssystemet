@@ -118,10 +118,10 @@ namespace ShelterudlejningssystemetLib
             Blog_opslag begivenhed = GetEvent(BlogId);
             if (begivenhed != null)
             {
-                begivenhed.Id = updatedBegivenhed.Id;
-                begivenhed.Title = updatedBegivenhed.Title;
+                begivenhed.ID = updatedBegivenhed.Id;
+                begivenhed.Titel = updatedBegivenhed.Titel;
                 begivenhed.Tekst = updatedBegivenhed.Tekst;
-                begivenhed.Date = updatedBegivenhed.Date;
+                begivenhed.Dato = updatedBegivenhed.Dato;
             }
             return begivenhed;
         }
