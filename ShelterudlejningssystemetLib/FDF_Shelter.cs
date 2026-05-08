@@ -93,13 +93,29 @@ namespace ShelterudlejningssystemetLib
             return " ShelterId: " + ShelterId + " ShelterNavn: " + ShelterNavn + " Lokation: " + Lokation + " Størrelse: " + Størrelse + " PostNummer: " + PostNummer;
         }
 
-        public void TilføjBooking(Booking booking) 
+        public bool TilføjBooking(Booking booking) 
         {
-            Bookinger.Add(booking);
+
+
+
+            if (ErLedigPeriode(booking.StartDato, booking.SlutDato))
+            {
+                Bookinger.Add(booking);
+                return true;
+            }
+
+            return false;
         }
 
         public bool ErLedigPeriode(DateTime start, DateTime slut)
         {
+            foreach (Booking booking in Bookinger)
+            {
+                if (start <= booking.StartDato && slut <= booking.SlutDato)
+                {
+                    return false;
+                }
+            }
             return true;
         }
 
