@@ -4,18 +4,18 @@ using System.Text;
 
 namespace ShelterudlejningssystemetLib
 {
-    public class Blog
+    public class BlogListe
     {
         // instans felter
         private List<Blog_opslag> _begivenheder;
 
         // konstruktør
-        public Blog()
+        public BlogListe()
         {
             _begivenheder = new List<Blog_opslag>();
         }
 
-        public Blog(List<Blog_opslag> begivenheder)
+        public BlogListe(List<Blog_opslag> begivenheder)
         {
             _begivenheder = begivenheder;
         }
