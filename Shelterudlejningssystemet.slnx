@@ -1,5 +1,4 @@
 <Solution>
   <Project Path="ShelterudlejningssystemApp/ShelterudlejningssystemApp.csproj" />
   <Project Path="ShelterudlejningssystemetLib/ShelterudlejningssystemetLib.csproj" Id="56f6ac64-e0db-4979-99f5-85e56363bc90" />
-  <Project Path="ShelterudlejningssystemRazor/ShelterudlejningssystemRazor.csproj" Id="6879cf2e-1fb7-490d-be3c-25037c6bf08b" />
 </Solution>
