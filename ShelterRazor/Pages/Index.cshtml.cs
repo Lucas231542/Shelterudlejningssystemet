@@ -5,6 +5,10 @@ namespace ShelterRazor.Pages
 {
     public class IndexModel : PageModel
     {
+        public IndexModel() 
+        {
+
+        }
         public void OnGet()
         {
 
