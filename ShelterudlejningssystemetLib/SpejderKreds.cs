@@ -8,7 +8,7 @@ namespace ShelterudlejningssystemetLib
         private int _kredsID;
         private string _name;
         private int _størrelse;
-        private List<SpejderKreds> _kredse;
+        
 
 
         // konstruktør
@@ -17,16 +17,16 @@ namespace ShelterudlejningssystemetLib
             KredsID = 0;
             Name = "";
             Størrelse = 0;
-            Kredse = new List<SpejderKreds>();
+           
 
         }
 
-        public SpejderKreds(int kredsID, string name, int størrelse, List<SpejderKreds> kredse)
+        public SpejderKreds(int kredsID, string name, int størrelse)
         {
             KredsID = kredsID;
             Name = name;
             Størrelse = størrelse;
-            Kredse = kredse;
+           
         }
 
         // properties
@@ -61,68 +61,14 @@ namespace ShelterudlejningssystemetLib
                 _størrelse = value; }
         }
 
-        public List<SpejderKreds> Kredse
-        {
-            get { return _kredse; }
-            set { _kredse = value; }
-        }
 
-
-        //metoder
-
-
-        public void AddKreds(SpejderKreds newKreds)
-        {
-            Kredse.Add(newKreds);
-        }
-        
-        public SpejderKreds Get(int kredsID)
-        {
-            foreach (var kreds in Kredse)
-            {
-                if (kreds.KredsID == kredsID)
-                {
-                    return kreds;
-                }
-            }
-            return null; // Return null if no matching SpejderKreds is found
-        }
-
-        public List<SpejderKreds> GetAll()
-        {
-            return new List<SpejderKreds>(Kredse);
-        }
-
-
-        public SpejderKreds Remove(int kredsID)
-        {
-            SpejderKreds kredstoRemove = Get(kredsID);
-            
-                _kredse.Remove(kredstoRemove);
-                return kredstoRemove; // Return the removed SpejderKreds
-        }
-
-
-        public SpejderKreds Edit(int kredsID, string newName, int newStørrelse)
-        {
-            SpejderKreds kredsToEdit = Get(kredsID);
-            if (kredsToEdit != null)
-            {
-                kredsToEdit.Name = newName;
-                kredsToEdit.Størrelse = newStørrelse;
-                return kredsToEdit; // Return the edited SpejderKreds
-            }
-            return null; // Return null if no matching SpejderKreds is found
-        }
-
-
+        // metode
         public override string ToString()
         {
             return $"KredsID: {KredsID}, Name: {Name}, Størrelse: {Størrelse}";
 
 
         }
-
 
 
     }
