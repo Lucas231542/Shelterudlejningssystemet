@@ -38,7 +38,7 @@ namespace ShelterudlejningssystemetLib
 
         // liste over alle Blog opslag
 
-        private List<Blog_opslag> _alleBlog_opslag = new List<Blog_opslag>();
+        private List<Blog_opslag> begivenheder = new List<Blog_opslag>();
 
 
         // properties
@@ -66,21 +66,21 @@ namespace ShelterudlejningssystemetLib
         // Tilføjer en Blog opslag til listen
         public void TilføjBlog_opslag(Blog_opslag Blog_opslag)
         {
-        _alleBlog_opslag.Add(Blog_opslag);
+        begivenheder.Add(Blog_opslag);
         }
 
         // Sletter en Blog oplsag fra listen 
 
         public void SletBlog_opslag(int id)
         {
-            _alleBlog_opslag.RemoveAll(b => b._id == id);
+            begivenheder.RemoveAll(b => b._id == id);
         }
 
         // Kalder en liste over Blog opslag der endnu ikke er startet
         public List<Blog_opslag> HentKommendeBlog()
         {
             List<Blog_opslag> kommendeBlog = new List<Blog_opslag>();
-            foreach (Blog_opslag b in _alleBlog_opslag)
+            foreach (Blog_opslag b in begivenheder)
             {
                 if (b.Dato > DateTime.Now)
                 {
@@ -94,7 +94,7 @@ namespace ShelterudlejningssystemetLib
         // Redigere en eksisterende opslag med nye værdier 
         public void RedigerBlog_opslag(int nyid, string nytitel, string nytekst, DateTime nydato)
         {
-            foreach (Blog_opslag b in _alleBlog_opslag)
+            foreach (Blog_opslag b in begivenheder)
             {
                 if (b._id == nyid)
                 {
