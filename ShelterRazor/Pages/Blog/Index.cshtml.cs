@@ -20,8 +20,14 @@ namespace ShelterRazor.Pages.Blog
             set { _Opslag = value; }
         }
 
+
         public void OnGet()
         {
+        }
+
+        public IActionResult OnPostPress()
+        {
+                return RedirectToPage("/Blog/Create");
         }
     }
 }
