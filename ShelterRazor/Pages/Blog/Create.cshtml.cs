@@ -11,7 +11,9 @@ namespace ShelterRazor.Pages.Blog
         public CreateModel(BlogListe opslag)
         {
             _Opslag = opslag;
+            Dato = DateTime.Now;        // Dette gør at startdatoen som kan vælges er den nuværende dato, så man ikke starter fra år 1
         }
+
 
         public BlogListe Opslag
         {
