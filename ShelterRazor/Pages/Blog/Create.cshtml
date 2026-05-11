@@ -1,0 +1,49 @@
+﻿@page
+@model ShelterRazor.Pages.Blog.CreateModel
+@{
+}
+<h1>Create Blog Post</h1>
+<form method="post">
+	<table class="col-6">
+		<tr>
+			<td>
+				<label>Blog Id</label>
+			</td>
+			<td>
+				<input type="number" asp-for="@Model.Id" />
+			</td>
+			
+		</tr>
+		<tr>
+			<td>
+				<label>Blog Titel</label>
+			</td>
+			<td>
+				<input type="text" asp-for="@Model.Titel" />
+			</td>
+			
+		</tr>
+		<tr>
+			<td>
+				<label>Blog tekst</label>
+			</td>
+			<td>
+				<input type="text" asp-for="@Model.Tekst" />
+			</td>
+			
+		</tr>
+		<tr>
+			<td>
+				<label>Blog Dato</label>
+			</td>
+			<td>
+				<input type="date" asp-for="@Model.Dato" />
+			</td>
+		</tr>
+
+	</table>
+
+	<input type="submit" class="btn btn-success" value="opret blog opslag" asp-page-handler="Ok"/>
+	<input type="submit" class="btn btn-danger" value="annuller" asp-page-handler="Cancel" />
+
+</form>

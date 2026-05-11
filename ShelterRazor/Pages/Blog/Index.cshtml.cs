@@ -6,15 +6,15 @@ namespace ShelterRazor.Pages.Blog
 {
     public class IndexModel : PageModel
     {
-        private Blog_opslag _Opslag;
+        private BlogListe _Opslag;
 
-        public IndexModel(Blog_opslag opslag)
+        public IndexModel(BlogListe opslag)
         {
             _Opslag = opslag;
         }
 
         // property
-        public Blog_opslag Opslag
+        public BlogListe Opslag
         {
             get { return _Opslag; }
             set { _Opslag = value; }
