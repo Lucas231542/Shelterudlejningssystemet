@@ -27,5 +27,7 @@ namespace ShelterudlejningssystemetLib
         }
 
         // tilføj alle metoder under her
+
+
     }
 }
