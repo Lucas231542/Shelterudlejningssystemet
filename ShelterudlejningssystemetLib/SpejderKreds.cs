@@ -7,7 +7,7 @@ namespace ShelterudlejningssystemetLib
         // instans felter 
         private int _kredsID;
         private string _name;
-        private int _størrelse;
+        private int _medlemmer;
         
 
 
@@ -16,16 +16,16 @@ namespace ShelterudlejningssystemetLib
         {
             KredsID = 0;
             Name = "";
-            Størrelse = 0;
+            Medlemmer = 0;
            
 
         }
 
-        public SpejderKreds(int kredsID, string name, int størrelse)
+        public SpejderKreds(int kredsID, string name, int medlemmer)
         {
             KredsID = kredsID;
             Name = name;
-            Størrelse = størrelse;
+            Medlemmer = medlemmer;
            
         }
 
@@ -50,22 +50,22 @@ namespace ShelterudlejningssystemetLib
             }
         }
 
-        public int Størrelse
+        public int Medlemmer
         {
-            get { return _størrelse; }
+            get { return Medlemmer; }
             set {
                 if (value < 0)
                 {
                     throw new ArgumentException("Størrelse cannot be negative.");
                 }
-                _størrelse = value; }
+                _medlemmer = value; }
         }
 
 
         // metode
         public override string ToString()
         {
-            return $"KredsID: {KredsID}, Name: {Name}, Størrelse: {Størrelse}";
+            return $"KredsID: {KredsID}, Name: {Name}, Medlemmer: {Medlemmer}";
 
 
         }

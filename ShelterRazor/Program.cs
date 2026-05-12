@@ -21,6 +21,25 @@ if (TestData)
 
 builder.Services.AddSingleton<BlogListe>(new BlogListe(Blog_opslagListe));
 
+
+
+
+
+
+bool TestData2 = true;
+List<SpejderKreds> SpejderKredsListe = new List<SpejderKreds>();
+if (TestData2)
+{
+    SpejderKreds kreds1 = new SpejderKreds(1, "Kreds 1", 100);
+    SpejderKreds kreds2 = new SpejderKreds(2, "Kreds 2", 150);
+    SpejderKreds kreds3 = new SpejderKreds(3, "Kreds 3", 200);
+    SpejderKredsListe.Add(kreds1);
+    SpejderKredsListe.Add(kreds2);
+    SpejderKredsListe.Add(kreds3);
+}
+
+
+builder.Services.AddSingleton<ISpejderKredsService, SpejderKredsService>();
 var app = builder.Build();
 
 

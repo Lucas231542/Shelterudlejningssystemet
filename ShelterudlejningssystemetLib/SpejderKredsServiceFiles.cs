@@ -1,23 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json;
 using System.Text;
-using System.Xml.Linq;
 
 namespace ShelterudlejningssystemetLib
 {
-    public class SpejderKredsService : ISpejderKredsService
+    public class SpejderKredsServiceFiles:ISpejderKredsService
     {
         //aggregation class for SpejderKreds
         private List<SpejderKreds> _kredse;
 
 
         // constructor
-        public SpejderKredsService()
+        public SpejderKredsServiceFiles()
         {
             Kredse = new List<SpejderKreds>();
+            LoadFromFile();
         }
 
-        public SpejderKredsService(List<SpejderKreds> kredse)
+        public SpejderKredsServiceFiles(List<SpejderKreds> kredse)
         {
             Kredse = kredse;
         }
@@ -37,6 +38,7 @@ namespace ShelterudlejningssystemetLib
         public void AddKreds(SpejderKreds newKreds)
         {
             Kredse.Add(newKreds);
+            SaveToFile();
         }
 
         public SpejderKreds Get(int kredsID)
@@ -62,6 +64,7 @@ namespace ShelterudlejningssystemetLib
             SpejderKreds kredstoRemove = Get(kredsID);
 
             _kredse.Remove(kredstoRemove);
+            SaveToFile();
             return kredstoRemove; // Return the removed SpejderKreds
         }
 
@@ -73,13 +76,11 @@ namespace ShelterudlejningssystemetLib
             {
                 kredsToEdit.Name = newName;
                 kredsToEdit.Medlemmer = newStørrelse;
+                SaveToFile();
                 return kredsToEdit; // Return the edited SpejderKreds
             }
             return null; // Return null if no matching SpejderKreds is found
         }
-
-
-        // To String 
 
         public override string ToString()
         {
@@ -92,5 +93,28 @@ namespace ShelterudlejningssystemetLib
             return resultatStr;
         }
 
+        private void LoadFromFile()
+        {
+            try
+            {
+                StreamReader sr = new StreamReader(@"C:\Users\lucas\OneDrive - Zealand\Documents\Zealand lokalt\eksamensProjekt 1 semester\Shelterudlejningssystemet\Datafiler.json");
+                string jsonStr = sr.ReadLine();
+                List<SpejderKreds> kredse = JsonSerializer.Deserialize<List<SpejderKreds>>(jsonStr);
+                sr.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("kan ikke læse filen: " + ex.Message);
+                _kredse = new List<SpejderKreds>(); // Initialize an empty list if the file cannot be read
+            }
+            }
+
+        private void SaveToFile()
+        {
+            string jsonStr = JsonSerializer.Serialize(_kredse);
+            StreamWriter sw = new StreamWriter("kredse.json");
+            sw.Write(jsonStr);
+            sw.Close();
+        }
     }
 }
