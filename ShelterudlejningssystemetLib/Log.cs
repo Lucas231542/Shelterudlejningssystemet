@@ -13,8 +13,8 @@ namespace ShelterudlejningssystemetLib
         private DateTime _startdato;
         private DateTime _slutdato;
         private string _tekst;
+        private int _shelterId;     
 
-        private static List<Log> _alleLogs = new List<Log>();
         public Log()
         {
             Id = 0;
@@ -55,43 +55,14 @@ namespace ShelterudlejningssystemetLib
             get { return _tekst; }
             set { _tekst = value; }
         }
-        public static void TilføjLog(Log log)
+        public int ShelterId
         {
-            _alleLogs.Add(log);
-        }
-        public static List<Log> HentAlleLogs()
-        {
-            return new List<Log>(_alleLogs);
-        }
-        public static void SletLog(int id)
-        {
-            _alleLogs.RemoveAll(l => l.Id == id);
-        }
-        public static Log HentLog(int id)
-        {
-            foreach (Log log in _alleLogs)
-            {
-                if (log.Id == id)
-                {
-                    return log;
-
-                }
-            }
-            return null;
-        }
-        public static void RedigerLog(int id, DateTime nyStartdato, DateTime nySlutdato, string nyTekst)
-        {
-            Log log = HentLog(id);
-            if (log != null)
-            {
-                log.Startdato = nyStartdato;
-                log.Slutdato = nySlutdato;
-                log.Tekst = nyTekst;
-            }
+            get { return _shelterId; }
+            set { _shelterId = value; }
         }
         public override string ToString()
         {
-            return "Id:" + Id + ", Startdato:" + Startdato + ", Slutdato:" + Slutdato + ", Tekst:" + Tekst;
+            return "Id:" + Id + ", Startdato:" + Startdato + ", Slutdato:" + Slutdato + ", Tekst:" + Tekst + ", ShelterId:" + ShelterId;
         }
         }
     }
