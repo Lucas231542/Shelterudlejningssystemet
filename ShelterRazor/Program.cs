@@ -39,7 +39,7 @@ if (TestData2)
 }
 
 
-builder.Services.AddSingleton<ISpejderKredsService, SpejderKredsService>();
+builder.Services.AddSingleton<ISpejderKredsService>(new SpejderKredsService(SpejderKredsListe));
 
 var app = builder.Build();
 

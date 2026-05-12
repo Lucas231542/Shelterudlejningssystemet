@@ -53,7 +53,7 @@ namespace ShelterudlejningssystemetLib
 
         public List<SpejderKreds> GetAll()
         {
-            return new List<SpejderKreds>(Kredse);
+            return new List<SpejderKreds>(_kredse);
         }
 
 
