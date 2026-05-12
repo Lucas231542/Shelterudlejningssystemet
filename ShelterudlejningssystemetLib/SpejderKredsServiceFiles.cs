@@ -98,8 +98,9 @@ namespace ShelterudlejningssystemetLib
             try
             {
                 StreamReader sr = new StreamReader(@"C:\Users\lucas\OneDrive - Zealand\Documents\Zealand lokalt\eksamensProjekt 1 semester\Shelterudlejningssystemet\Datafiler.json");
-                string jsonStr = sr.ReadLine();
+                string jsonStr = sr.ReadToEnd();
                 List<SpejderKreds> kredse = JsonSerializer.Deserialize<List<SpejderKreds>>(jsonStr);
+                _kredse = kredse;
                 sr.Close();
             }
             catch (Exception ex)
@@ -107,14 +108,16 @@ namespace ShelterudlejningssystemetLib
                 Console.WriteLine("kan ikke læse filen: " + ex.Message);
                 _kredse = new List<SpejderKreds>(); // Initialize an empty list if the file cannot be read
             }
-            }
+        }
 
         private void SaveToFile()
         {
             string jsonStr = JsonSerializer.Serialize(_kredse);
-            StreamWriter sw = new StreamWriter("kredse.json");
+            StreamWriter sw = new StreamWriter(@"C:\Users\lucas\OneDrive - Zealand\Documents\Zealand lokalt\eksamensProjekt 1 semester\Shelterudlejningssystemet\Datafiler.json");
             sw.Write(jsonStr);
             sw.Close();
         }
+
+
     }
 }
