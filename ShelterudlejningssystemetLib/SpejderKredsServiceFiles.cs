@@ -45,7 +45,7 @@ namespace ShelterudlejningssystemetLib
         {
             foreach (var kreds in Kredse)
             {
-                if (kreds.KredsID == kredsID)
+                if (kreds.KredsId == kredsID)
                 {
                     return kreds;
                 }

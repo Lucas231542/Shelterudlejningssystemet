@@ -1,4 +1,26 @@
 ﻿@page
+@using ShelterudlejningssystemetLib
 @model ShelterRazor.Pages.Spejderkredse.Index_SpejderkredseModel
 @{
 }
+<h1>Spejderkredse</h1>
+<div class="row">
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>KredsId</th>
+				<th>Name</th>
+				<th>Medlemmer</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (SpejderKreds item in Model.SpejderKredsService.GetAll())
+			{
+				<tr>
+					<td>@item.KredsId</td>
+					<td>@item.Name</td>
+					<td>@item.Medlemmer</td>
+				</tr>
+			}
+		</tbody>
+	</table>

@@ -73,7 +73,7 @@ namespace ShelterudlejningssystemetLib
         }
 
         // Tilføjer en Blog opslag til listen
-        public void TilføjBlog_opslag(Blog_opslag Blog_opslag)
+       /* public void TilføjBlog_opslag(Blog_opslag Blog_opslag)
         {
         begivenheder.Add(Blog_opslag);
         }
@@ -114,7 +114,7 @@ namespace ShelterudlejningssystemetLib
                 }
             }
         }
-
+       */
 
         // metoder 
         public override string ToString()

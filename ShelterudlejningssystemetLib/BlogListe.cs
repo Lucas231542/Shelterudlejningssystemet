@@ -56,7 +56,7 @@ namespace ShelterudlejningssystemetLib
         }
 
         // Redigere en eksisterende opslag med nye værdier 
-        public void RedigerBlog_opslag(int nyid, string nytitel, string nytekst, DateTime nydato)
+        public void RedigerBlog_opslag(int nyid, string nytitel, string nytekst, DateTime nydato, string nyimagePath)
         {
             foreach (Blog_opslag b in begivenheder)
             {
@@ -65,6 +65,7 @@ namespace ShelterudlejningssystemetLib
                     b.Titel = nytitel;
                     b.Tekst = nytekst;
                     b.Dato = nydato;
+                    b.imagePath = nyimagePath;
                 }
             }
         }

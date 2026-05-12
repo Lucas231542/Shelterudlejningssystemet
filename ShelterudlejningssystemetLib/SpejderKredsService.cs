@@ -39,11 +39,11 @@ namespace ShelterudlejningssystemetLib
             Kredse.Add(newKreds);
         }
 
-        public SpejderKreds Get(int kredsID)
+        public SpejderKreds Get(int kredsId)
         {
             foreach (var kreds in Kredse)
             {
-                if (kreds.KredsID == kredsID)
+                if (kreds.KredsId == kredsId)
                 {
                     return kreds;
                 }
@@ -57,18 +57,18 @@ namespace ShelterudlejningssystemetLib
         }
 
 
-        public SpejderKreds Remove(int kredsID)
+        public SpejderKreds Remove(int kredsId)
         {
-            SpejderKreds kredstoRemove = Get(kredsID);
+            SpejderKreds kredstoRemove = Get(kredsId);
 
             _kredse.Remove(kredstoRemove);
             return kredstoRemove; // Return the removed SpejderKreds
         }
 
 
-        public SpejderKreds Edit(int kredsID, string newName, int newStørrelse)
+        public SpejderKreds Edit(int kredsId, string newName, int newStørrelse)
         {
-            SpejderKreds kredsToEdit = Get(kredsID);
+            SpejderKreds kredsToEdit = Get(kredsId);
             if (kredsToEdit != null)
             {
                 kredsToEdit.Name = newName;

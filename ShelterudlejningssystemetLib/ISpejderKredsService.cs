@@ -11,5 +11,6 @@ namespace ShelterudlejningssystemetLib
         public SpejderKreds Get(int kredsID);
         public List<SpejderKreds> GetAll();
         public SpejderKreds Edit(int kredsID, string newName, int newStørrelse);
+        
     }
 }

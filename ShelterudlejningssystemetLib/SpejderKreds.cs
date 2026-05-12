@@ -5,7 +5,7 @@ namespace ShelterudlejningssystemetLib
     public class SpejderKreds
     {
         // instans felter 
-        private int _kredsID;
+        private int _kredsId;
         private string _name;
         private int _medlemmer;
         
@@ -14,7 +14,7 @@ namespace ShelterudlejningssystemetLib
         // konstruktør
         public SpejderKreds()
         {
-            KredsID = 0;
+            KredsId = 0;
             Name = "";
             Medlemmer = 0;
            
@@ -23,7 +23,7 @@ namespace ShelterudlejningssystemetLib
 
         public SpejderKreds(int kredsID, string name, int medlemmer)
         {
-            KredsID = kredsID;
+            KredsId = kredsID;
             Name = name;
             Medlemmer = medlemmer;
            
@@ -31,10 +31,10 @@ namespace ShelterudlejningssystemetLib
 
         // properties
 
-        public int KredsID
+        public int KredsId
         {
-            get { return _kredsID; }
-            set { _kredsID = value; }
+            get { return _kredsId; }
+            set { _kredsId = value; }
         }
 
         public string Name
@@ -65,7 +65,7 @@ namespace ShelterudlejningssystemetLib
         // metode
         public override string ToString()
         {
-            return $"KredsID: {KredsID}, Name: {Name}, Medlemmer: {Medlemmer}";
+            return $"KredsID: {KredsId}, Name: {Name}, Medlemmer: {Medlemmer}";
 
 
         }

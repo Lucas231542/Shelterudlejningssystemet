@@ -27,6 +27,7 @@ namespace ShelterRazor.Pages.Blog
         private string _titel;
         private string _tekst;
         private DateTime _dato;
+        private string _imagePath;
 
         [BindProperty]
         public int Id
@@ -52,13 +53,19 @@ namespace ShelterRazor.Pages.Blog
             get { return _dato; }
             set { _dato = value; }
         }
+        [BindProperty]
+        public string ImagePath
+        {
+            get { return _imagePath; }
+            set { _imagePath = value; }
+        }
         public void OnGet()
         {
         }
 
         public IActionResult OnPostOk()
         {
-            Blog_opslag blog_opslag = new Blog_opslag(Id, Titel, Tekst, Dato);
+            Blog_opslag blog_opslag = new Blog_opslag(Id, Titel, Tekst, Dato, ImagePath);
             _Opslag.TilføjBlog_opslag(blog_opslag);
             return RedirectToPage("/Blog/Index");
         }
