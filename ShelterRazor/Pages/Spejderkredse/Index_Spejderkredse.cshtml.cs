@@ -6,15 +6,15 @@ namespace ShelterRazor.Pages.Spejderkredse
 {
     public class Index_SpejderkredseModel : PageModel
     {
-        private SpejderKredsService _spejderKredsService;
+        private ISpejderKredsService _spejderKredsService;
 
-        public Index_SpejderkredseModel(SpejderKredsService spejderKredsService)
+        public Index_SpejderkredseModel(ISpejderKredsService spejderKredsService)
         {
             _spejderKredsService = spejderKredsService;
         }
 
         // Property
-        public SpejderKredsService SpejderKredsService
+        public ISpejderKredsService SpejderKredsService
         {
             get { return _spejderKredsService; }
             set { _spejderKredsService = value; }
