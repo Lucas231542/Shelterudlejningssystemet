@@ -52,7 +52,7 @@ namespace ShelterudlejningssystemetLib
 
         public int Medlemmer
         {
-            get { return Medlemmer; }
+            get { return _medlemmer; }
             set {
                 if (value < 0)
                 {
@@ -66,7 +66,6 @@ namespace ShelterudlejningssystemetLib
         public override string ToString()
         {
             return $"KredsID: {KredsId}, Name: {Name}, Medlemmer: {Medlemmer}";
-
 
         }
 
