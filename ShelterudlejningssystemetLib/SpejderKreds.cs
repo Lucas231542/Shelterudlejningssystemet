@@ -42,9 +42,9 @@ namespace ShelterudlejningssystemetLib
             get { return _name; }
             set
             {
-                if (value.Length < 0)
+                if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentException("Name cannot be null or empty.");
+                    throw new ArgumentException("Name kan ikke være null eller tom.");
                 }
                 _name = value;
             }
@@ -56,7 +56,7 @@ namespace ShelterudlejningssystemetLib
             set {
                 if (value < 0)
                 {
-                    throw new ArgumentException("Størrelse cannot be negative.");
+                    throw new ArgumentException("Antal kan ikke være negativt.");
                 }
                 _medlemmer = value; }
         }
