@@ -16,7 +16,7 @@ namespace ShelterudlejningssystemetLib
         private int _postNummer;
         private int _størrelse;
         private List<Booking> _bookinger;
-        private bool _erLedig;
+     
 
 
         // Konstruktør
@@ -28,18 +28,17 @@ namespace ShelterudlejningssystemetLib
             Størrelse = 0;
             PostNummer = 0;
             Bookinger = new List<Booking>();
-            ErLedig = true;
+          
 
         }
 
-        public FDF_Shelter(int shelterId, string shelterNavn, string lokation, int størrelse, int postNummer, bool erLedig)
+        public FDF_Shelter(int shelterId, string shelterNavn, string lokation, int størrelse, int postNummer)
         {
             ShelterId = shelterId;
             ShelterNavn = shelterNavn;
             Lokation = lokation;
             Størrelse = størrelse;
             PostNummer = postNummer;
-            ErLedig = erLedig;
             Bookinger = new List<Booking>();
         }
 
@@ -48,7 +47,11 @@ namespace ShelterudlejningssystemetLib
         public int ShelterId
         {
             get { return _shelterId; }
-            set { _shelterId = value; }
+            set {
+                if (value < 0)
+                    throw new ArgumentException("ShelterID skal have en positiv værdi");
+                
+                _shelterId = value; }
         }
 
         public string ShelterNavn
@@ -66,13 +69,23 @@ namespace ShelterudlejningssystemetLib
         public int PostNummer
         {
             get { return _postNummer; }
-            set { _postNummer = value; }
+            set
+            {
+                if (value < 0)
+                    throw new ArgumentException("postnummer skal være positivt");
+                
+                
+                _postNummer = value; }
         }
 
         public int Størrelse
         {
             get { return _størrelse; }
-            set { _størrelse = value; }
+            set {
+                if (value < 0)
+                    throw new ArgumentException("Størrelse skal være positiv");
+                
+                _størrelse = value; }
         }
 
 
@@ -82,12 +95,7 @@ namespace ShelterudlejningssystemetLib
             set { _bookinger = value; }
         }
 
-        public bool ErLedig
-        {
-            get { return _erLedig; }
-            set { _erLedig = value; }
-        }
-
+        
         public override string ToString()
         {
             return " ShelterId: " + ShelterId + " ShelterNavn: " + ShelterNavn + " Lokation: " + Lokation + " Størrelse: " + Størrelse + " PostNummer: " + PostNummer;
@@ -96,7 +104,7 @@ namespace ShelterudlejningssystemetLib
         public bool TilføjBooking(Booking booking) 
         {
 
-
+            if (booking == null) return false;
 
             if (ErLedigPeriode(booking.StartDato, booking.SlutDato))
             {
@@ -109,9 +117,14 @@ namespace ShelterudlejningssystemetLib
 
         public bool ErLedigPeriode(DateTime start, DateTime slut)
         {
+            if (start > slut)
+            {
+                return false;
+            }
+
             foreach (Booking booking in Bookinger)
             {
-                if (start <= booking.StartDato && slut <= booking.SlutDato)
+                if (start <= booking.SlutDato && slut >= booking.StartDato)
                 {
                     return false;
                 }
@@ -119,6 +132,10 @@ namespace ShelterudlejningssystemetLib
             return true;
         }
 
+        public  List<Booking> HentBookinger()
+        {
+            return new List<Booking>(Bookinger);
+        }
     }
 }
 

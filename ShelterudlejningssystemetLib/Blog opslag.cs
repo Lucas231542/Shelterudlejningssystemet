@@ -14,6 +14,7 @@ namespace ShelterudlejningssystemetLib
         private string _titel;
         private string _tekst;
         private DateTime _dato;
+        private string _imagePath;
 
         // konstruktører
 
@@ -24,15 +25,17 @@ namespace ShelterudlejningssystemetLib
             _titel = "";
             _tekst = "";
             _dato = DateTime.Now;
+            _imagePath = "";
 
         }
 
-        public Blog_opslag(int id, string titel, string tekst, DateTime dato)
+        public Blog_opslag(int id, string titel, string tekst, DateTime dato, string imagePath)
         {
             _id = id;
             _titel = titel;
             _tekst = tekst;
             _dato = dato;
+            _imagePath = imagePath;
 
         }
 
@@ -61,6 +64,12 @@ namespace ShelterudlejningssystemetLib
         {
             get { return _dato; }
             set { _dato = value; }
+        }
+
+        public string imagePath
+        {
+            get { return _imagePath; }
+            set { _imagePath = value; }
         }
 
         // Tilføjer en Blog opslag til listen
@@ -92,7 +101,7 @@ namespace ShelterudlejningssystemetLib
         }
 
         // Redigere en eksisterende opslag med nye værdier 
-        public void RedigerBlog_opslag(int nyid, string nytitel, string nytekst, DateTime nydato)
+        public void RedigerBlog_opslag(int nyid, string nytitel, string nytekst, DateTime nydato, string nyimagePath)
         {
             foreach (Blog_opslag b in begivenheder)
             {
@@ -101,6 +110,7 @@ namespace ShelterudlejningssystemetLib
                     b._titel = nytitel;
                     b._tekst = nytekst;
                     b._dato = nydato;
+                    b._imagePath = nyimagePath;
                 }
             }
         }
@@ -110,7 +120,7 @@ namespace ShelterudlejningssystemetLib
         public override string ToString()
         {
             return "InlægID: InlægID= " + Id + ", Titel= " + Titel + ", Tekst= " + Tekst +
-                ", Dato= " + Dato;
+                ", Dato= " + Dato + ", Billede= " + imagePath;
         }
 
 
