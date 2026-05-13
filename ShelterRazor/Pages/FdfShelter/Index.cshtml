@@ -2,3 +2,31 @@
 @model ShelterRazor.Pages.FdfShelter.IndexModel
 @{
 }
+<h1>Liste over Shelter Bookinger</h1>
+<div class="row">
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>Shelter Navn</th>
+				<th>Booking ID</th>
+				<th>Start Dato</th>
+				<th>Slut Dato</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var shelter in Model.Shelters)
+			{
+				@foreach (var booking in shelter.Bookinger)
+				{
+				<tr>
+					<td>@shelter.ShelterNavn</td>
+					<td>@booking.BookingId</td>
+					<td>@booking.StartDato.ToShortDateString()</td>
+					<td>@booking.SlutDato.ToShortDateString()</td>
+				</tr>
+				}
+			}
+		</tbody>
+	</table>
+	
+</div>
