@@ -13,8 +13,8 @@ namespace ShelterRazor.Pages.FdfShelter
 
     
 
-            FDF_Shelter shelter1 = new FDF_Shelter(1, "numero uno", "Ganløse", 5, 3660);
-            FDF_Shelter shelter2 = new FDF_Shelter(2, "numero dos", "Ganløse", 5, 3660);
+            FDF_Shelter shelter1 = new FDF_Shelter(1, "Den Store Bjørn", "Ganløse", 5, 3660);
+            FDF_Shelter shelter2 = new FDF_Shelter(2, "Det Skæve Æsel", "Ganløse", 5, 3660);
 
             shelter1.TilføjBooking(new Booking
             {
