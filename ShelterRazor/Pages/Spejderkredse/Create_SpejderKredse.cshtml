@@ -2,3 +2,37 @@
 @model ShelterRazor.Pages.Spejderkredse.Create_SpejderKredseModel
 @{
 }
+<h1>Opret Spejderkreds</h1>
+<form method="post">
+	<table class="col-6">
+		<tr>
+			<td>
+				<label>Spejderkreds Id</label>
+			</td>
+			<td>
+				<input type="number" asp-for="@Model.KredsId" />
+			</td>
+			
+		</tr>
+		<tr>
+			<td>
+				<label>Spejderkreds Navn</label>
+			</td>
+			<td>
+				<input type="text" asp-for="@Model.Name" />
+			</td>
+			
+		</tr>
+		<tr>
+			<td>
+				<label>Antal Medlemmer</label>
+			</td>
+			<td>
+				<input type="number" asp-for="@Model.Medlemmer" />
+			</td>
+		</tr>
+	</table>
+	<input type="submit" class="btn btn-success" value="opret spejderkreds" asp-page-handler="Ok"/>
+	<input type="submit" class="btn btn-danger" value="annuller" asp-page-handler="Cancel" />
+	<input type="submit" class="btn btn-warning" value="slet" asp-page-handler="Delete" />
+</form>

@@ -42,10 +42,7 @@ namespace ShelterudlejningssystemetLib
             get { return _name; }
             set
             {
-                if (string.IsNullOrWhiteSpace(value))
-                {
-                    throw new ArgumentException("Name kan ikke være null eller tom.");
-                }
+                // Har ingen exception, så json kan køre
                 _name = value;
             }
         }
