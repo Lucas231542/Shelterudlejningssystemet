@@ -1,0 +1,26 @@
+@page
+@model ShelterRazor.Pages.Booking.Index_Booking
+
+<h1>Bookinger</h1>
+<a href="/Booking/Create_Booking" class="btn btn-success">Opret ny booking</a>
+<table class="table table-hover">
+<thead>
+<tr>
+    <th>ID</th>
+    <th>StartDato</th>
+    <th>SlutDato</th>
+    <th>Antal mennesker</th>
+</tr>
+</thead>
+<tbody>
+@foreach (var booking in Model.Bookinger)
+{
+    <tr>
+        <td>@booking.BookingId</td>
+        <td>@booking.StartDato.ToShortDateString()</td>
+        <td>@booking.SlutDato.ToShortDateString()</td>
+        <td>@booking.AntalMennesker</td>
+    </tr>
+}
+</tbody>
+</table>

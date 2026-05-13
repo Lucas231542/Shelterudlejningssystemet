@@ -1,0 +1,27 @@
+@page
+@model ShelterRazor.Pages.Booking.Create_Booking
+<h1>Opret Booking</h1>
+<form method="post">
+<table class="col-6">   
+    <tr>
+        <td><label>Booking Id</label></td>
+        <td><input type="number" name="bookingId" /></td> 
+    </tr>  
+    <tr>
+        <td><label>StartDato</label></td>
+        <td><input type="date" name="startDato" /></td>
+    </tr>
+    <tr>
+        <td><label>SlutDato</label></td>
+        <td><input type="date" name="slutDato" /></td>
+    </tr> 
+    <tr>
+        <td><label>Antal mennesker</label></td>
+        <td><input type="number" name="antalMennesker" /></td>
+    </tr>
+   </table>
+
+<input type="submit" class="btn btn-success" value="opret booking" />
+<a href="/Booking/Index_Booking" class="btn btn-danger">annuller</a>
+
+</form>$ 
