@@ -1,0 +1,25 @@
+@page
+@model ShelterRazor.Pages.Booking.Delete_Booking
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Slet Booking</title>
+</head>
+<body>
+<div>
+    <h2>Slet Booking</h2>
+    <p>Er du sikker på at du vil slette den booking?</p>
+    <form method="post">
+    <input type="hidden" asp-for="BookingId"/>
+    <button type="submit" asp-page-handler="Slet" class="btn btn-danger">Ja, slet</button>
+    <a href="/Booking/Index_Booking" class="btn btn-secondary">Annuller</a>
+    </form>
+</div>
+</body>
+</html>
