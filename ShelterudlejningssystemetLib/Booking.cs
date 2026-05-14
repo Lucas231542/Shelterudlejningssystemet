@@ -91,6 +91,11 @@ namespace ShelterudlejningssystemetLib
             return kommendeBookinger;
         }
 
+        public static List<Booking> HentAlleBookinger()
+        {
+            return _alleBookinger;
+        }
+
 
         // Tilføjer en booking til listen over alle bookinger 
         public static void TilføjBooking(Booking booking)

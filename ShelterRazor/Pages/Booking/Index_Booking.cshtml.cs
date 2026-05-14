@@ -6,10 +6,17 @@ namespace ShelterRazor.Pages.Booking;
 
 public class Index_Booking : PageModel
 {
-    public List<ShelterudlejningssystemetLib.Booking> Bookinger { get; set; }
+    private List<ShelterudlejningssystemetLib.Booking> _bookinger;
+    public List<ShelterudlejningssystemetLib.Booking> Bookinger 
+    {
+        get { return _bookinger; }
+        set { _bookinger = value; }
+    }
+    
+    
     public void OnGet()
     {
-       
-        Bookinger = ShelterudlejningssystemetLib.Booking.HentKommendeBookinger();
-}
+
+        Bookinger = ShelterudlejningssystemetLib.Booking.HentAlleBookinger();
+    }
 }

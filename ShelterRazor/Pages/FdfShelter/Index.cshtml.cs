@@ -16,14 +16,14 @@ namespace ShelterRazor.Pages.FdfShelter
             FDF_Shelter shelter1 = new FDF_Shelter(1, "Den Store Bjørn", "Ganløse", 5, 3660);
             FDF_Shelter shelter2 = new FDF_Shelter(2, "Det Skæve Æsel", "Ganløse", 5, 3660);
 
-            shelter1.TilføjBooking(new Booking
+            shelter1.TilføjBooking (new ShelterudlejningssystemetLib.Booking()
             {
                 BookingId = 1,
                 StartDato =  new DateTime (2026, 5, 17),
                 SlutDato = new DateTime (2026, 5, 24)
             });
 
-            shelter2.TilføjBooking(new Booking
+            shelter2.TilføjBooking (new ShelterudlejningssystemetLib.Booking()
             {
                 BookingId = 2,
                 StartDato = new DateTime(2026, 5, 17),
