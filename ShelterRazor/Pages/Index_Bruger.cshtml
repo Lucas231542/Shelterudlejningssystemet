@@ -1,0 +1,36 @@
+@page
+@model ShelterRazor.Pages.Index_Bruger
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Brugere</title>
+</head>
+<body>
+<div>
+    <h2>Brugere</h2>
+    <table>
+    <tr>
+        <th>Navn</th>
+        <th>Type</th>
+        <th>Tlf</th>
+        <th>Email</th>
+    </tr>
+    @foreach (var brugere in Model.Brugere)
+    {
+        <tr>
+            <td>@brugere.Name</td>
+            <td>@brugere.GetType().Name</td>
+            <td>@brugere.tlf</td>
+            <td>@brugere.Email</td>
+        </tr> 
+    }
+    </table>
+</div>
+</body>
+</html>

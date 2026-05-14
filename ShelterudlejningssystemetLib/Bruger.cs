@@ -22,7 +22,7 @@ public class Bruger
         set { _id = value; }
     }
 
-    public string name
+    public string Name
     {
         get { return _name; }
         set { _name = value; }
@@ -34,7 +34,7 @@ public class Bruger
         set { _tlf = value; }
     }
 
-    public string email
+    public string Email
     {
         get { return _email; }
         set { _email = value; }
@@ -43,6 +43,6 @@ public class Bruger
     public override string ToString ()
     {
         return 
-        $"id: {id}, name: {name}, tlf: {tlf}, email: {email} ";
+        $"id: {id}, name: {Name}, tlf: {tlf}, email: {Email} ";
     }
 }
