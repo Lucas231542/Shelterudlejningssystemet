@@ -1,0 +1,26 @@
+﻿@page
+@model ShelterRazor.Pages.Spejderkredse.Edit_SpejderKredseModel
+@{
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Rediger Kreds</title>
+</head>
+<body>
+    <div>
+        <h2>Rediger Kreds</h2>
+        <form method="post">
+            <input type="hidden" asp-for="KredsId" />
+            <input type="hidden" asp-for="Name" />
+            <label asp-for="Medlemmer"></label>
+            <input type="number" asp-for="Medlemmer" />
+          
+            <button type="submit" asp-page-handler="Ok">Gem</button>
+            <button type="submit" asp-page-handler="Annuller">Annuller</button>
+         
+        </form>
+    </div>
+</body>
+</html>
