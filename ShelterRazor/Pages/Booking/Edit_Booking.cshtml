@@ -1,0 +1,30 @@
+@page
+@model ShelterRazor.Pages.Booking.Edit_Booking
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Rediger Booking</title>
+</head>
+<body>
+<div>
+    <h2>Rediger Booking</h2>
+    <form method="post">
+        <input type="hidden" asp-for="BookingId"/>
+        <label asp-for="StartDato"></label>
+        <input type="date" asp-for="StartDato"/>
+        <label asp-for="SlutDato"></label>
+        <input type="date" asp-for="SlutDato"/>
+        <label asp-for="AntalMennesker"></label>        
+        <input type="number" asp-for="AntalMennesker"/>
+        <button type="submit" asp-page-handler="Ok">Gem</button>
+        <button type="submit" asp-page-handler="Cancel">Annuller</button>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+﻿@page
+@model ShelterRazor.Pages.FdfShelter.IndexModel
+@{
+}
+<h1>Information om FDF Shelters</h1>
+<div class="row">
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>Shelter Navn</th>
+				<th>Shelter ID</th>
+				<th>Lokation</th>
+				<th>Størrelse</th>
+				<th>Post Nummer</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var shelter in Model.Shelters)
+			{
+				<tr>
+					<td>@shelter.ShelterNavn</td>
+					<td>@shelter.ShelterId</td>
+					<td>@shelter.Lokation</td>
+					<td>@shelter.Størrelse</td>
+					<td>@shelter.PostNummer</td>
+				</tr>
+				}
+	
+		</tbody>
+	</table>
+
+</div>
