@@ -59,21 +59,25 @@ namespace ShelterudlejningssystemetLib
 
         public SpejderKreds Remove(int kredsId)
         {
-            SpejderKreds kredstoRemove = Get(kredsId);
+            SpejderKreds s = Get(kredsId);
+            if (s != null)
+            {
+                Kredse.Remove(s);
+                return s; // Return the removed SpejderKreds
+            }
+            return null; // Return null if no matching SpejderKreds is found
 
-            _kredse.Remove(kredstoRemove);
-            return kredstoRemove; // Return the removed SpejderKreds
         }
 
 
         public SpejderKreds Edit(int kredsId, string newName, int newStørrelse)
         {
-            SpejderKreds kredsToEdit = Get(kredsId);
-            if (kredsToEdit != null)
+            SpejderKreds s = Get(kredsId);
+            if (s != null)
             {
-                kredsToEdit.Name = newName;
-                kredsToEdit.Medlemmer = newStørrelse;
-                return kredsToEdit; // Return the edited SpejderKreds
+                s.Name = newName;
+                s.Medlemmer = newStørrelse;
+                return s; // Return the edited SpejderKreds
             }
             return null; // Return null if no matching SpejderKreds is found
         }

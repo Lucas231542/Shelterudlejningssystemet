@@ -38,10 +38,15 @@ if (TestData2)
     SpejderKredsListe.Add(kreds3);
 }
 
-
+//builder.Services.AddSingleton<SpejderKredsServiceFiles>();
 builder.Services.AddSingleton<ISpejderKredsService, SpejderKredsServiceFiles>();
 
+
+
+
 var app = builder.Build();
+
+
 
 
 // Configure the HTTP request pipeline.
