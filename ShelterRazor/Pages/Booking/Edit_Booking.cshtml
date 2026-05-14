@@ -24,7 +24,8 @@
         <input type="number" asp-for="AntalMennesker"/>
         <button type="submit" asp-page-handler="Ok">Gem</button>
         <button type="submit" asp-page-handler="Cancel">Annuller</button>
-    </form>
+        <p style="color:red;">@Model.FejlBesked</p>
+      </form>
 </div>
 </body>
 </html>

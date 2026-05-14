@@ -9,6 +9,7 @@ public class Edit_Booking : PageModel
     private DateTime _startDato;
     private DateTime _slutDato;
     private int _antalMennesker;
+    private string _fejlBesked;
     
     [BindProperty]
     public int BookingId
@@ -34,9 +35,16 @@ public class Edit_Booking : PageModel
     [BindProperty]
     public int AntalMennesker
     {
-        get { return _antalMennesker; }  
-                                 
-        set { _antalMennesker = value;}  
+        get { return _antalMennesker; }
+        set { _antalMennesker = value; }
+    }
+
+
+    [BindProperty]
+    public string FejlBesked
+    {
+        get { return _fejlBesked; }
+        set { _fejlBesked = value; }
     }
 
     public void OnGet(int bookingId)
@@ -56,24 +64,19 @@ public class Edit_Booking : PageModel
 
     public IActionResult OnPostOk()
     {
-        ShelterudlejningssystemetLib.Booking.RedigerBooking(BookingId, StartDato, SlutDato, AntalMennesker);
-        return RedirectToPage("/Booking/Index_Booking");
+        if (SlutDato < StartDato)
+        {
+            FejlBesked = "SlutDato må ikke være før Startdato.";
+            return Page();
+        }
+        
+            ShelterudlejningssystemetLib.Booking.RedigerBooking(BookingId, StartDato, SlutDato, AntalMennesker);
+            return RedirectToPage("/Booking/Index_Booking");
+        }
+
+        public IActionResult OnPostCancel()
+        {
+            return RedirectToPage("/Booking/Index_Booking");
+        }
     }
 
-    public IActionResult OnPostCancel()
-    {
-        return RedirectToPage("/Booking/Index_Booking");
-    }
-    
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-    }
