@@ -97,7 +97,7 @@ namespace ShelterudlejningssystemetLib
         {
             try
             {
-                StreamReader sr = new StreamReader(@"C:\Users\lucas\OneDrive - Zealand\Documents\Zealand lokalt\eksamensProjekt 1 semester\Shelterudlejningssystemet\Datafiler.json");
+               StreamReader sr = new StreamReader("Datafiler.json");
                 string jsonStr = sr.ReadToEnd();
                 List<SpejderKreds> kredse = JsonSerializer.Deserialize<List<SpejderKreds>>(jsonStr);
                 _kredse = kredse;
@@ -113,7 +113,7 @@ namespace ShelterudlejningssystemetLib
         private void SaveToFile()
         {
             string jsonStr = JsonSerializer.Serialize(_kredse);
-            StreamWriter sw = new StreamWriter(@"C:\Users\lucas\OneDrive - Zealand\Documents\Zealand lokalt\eksamensProjekt 1 semester\Shelterudlejningssystemet\Datafiler.json");
+            StreamWriter sw = new StreamWriter("Datafiler.json");
             sw.Write(jsonStr);
             sw.Close();
         }
