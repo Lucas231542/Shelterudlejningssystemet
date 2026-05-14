@@ -1,0 +1,26 @@
+﻿@page 
+@model ShelterRazor.Pages.Spejderkredse.Delete_SpejderKredseModel
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+	<head>
+	<title>Slet Spejderkreds</title>
+	</head>
+<body>
+<div>
+	<h2>Slet Spejderkreds</h2>
+	<p>Er du sikker på at du vil slette denne spejderkreds?</p>
+		<form method="post" asp-page-handler="Slet">
+			<input type="hidden" asp-for="KredsId" />
+			<button type="submit" class="btn btn-danger">Ja, slet</button>
+			<a href="/Spejderkredse/Index_SpejderKredse" class="btn btn-secondary">Annuller</a>
+		</form>
+</div>
+
+</body>
+</html>
+

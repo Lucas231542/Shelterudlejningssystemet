@@ -66,11 +66,7 @@ namespace ShelterRazor.Pages.Spejderkredse
 
         }
 
-        public IActionResult OnPostDelete()
-        {
-            _oplysninger.Remove(KredsId);
-            return RedirectToPage("/Spejderkredse/Index_SpejderKredse");
-        }
+       
 
 
         public IActionResult OnPostOk()
