@@ -10,9 +10,9 @@ public class Bruger
     public Bruger(int id, string name, int tlf, string email)
     {
         _id = id;
-        _name = _name;
+        _name = name;
         _tlf =  tlf;
-        _email = _email;
+        _email = email;
 
     }
 
