@@ -7,7 +7,7 @@ public class Medarbejder: Bruger
     public Medarbejder (int id, string name, int tlf, string email)
         :base(id, name, tlf, email) 
     {
-        
+        _spejderKredsService  = new SpejderKredsService();
     }
     // Metode til at hente alle Spejderkredse ved brug af servicen 
     public List<SpejderKreds> hentAlleSpejderKredse()
@@ -15,5 +15,10 @@ public class Medarbejder: Bruger
       return  _spejderKredsService.GetAll();
 
 
+    }
+
+    public override string ToString()
+    {
+        return $"Medarbejder - {base.ToString()}";
     }
 }
