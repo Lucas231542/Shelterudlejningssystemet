@@ -12,6 +12,7 @@ namespace ShelterudlejningssystemetLib
         private DateTime _startDato;
         private DateTime _slutDato;
         private int _antalMennesker;
+        private string _kredsNavn;
 
         // liste over alle bookinger 
 
@@ -24,15 +25,17 @@ namespace ShelterudlejningssystemetLib
             _startDato = DateTime.Now;
             _slutDato = DateTime.Now;
             _antalMennesker = 0;
+            _kredsNavn = "";
         }
         // Konstruktør  
 
-        public Booking(int bookingId, DateTime startDato, DateTime slutDato, int antalMennesker)
+        public Booking(int bookingId, DateTime startDato, DateTime slutDato, int antalMennesker, string KredsNavn)
         {
             _bookingId = bookingId;
             _startDato = startDato;
             _slutDato = slutDato;
             _antalMennesker = antalMennesker;
+            _kredsNavn = KredsNavn;
         }
 
         // Properties 
@@ -74,6 +77,12 @@ namespace ShelterudlejningssystemetLib
 
                 _antalMennesker = value;
             }
+        }
+
+        public string KredsNavn
+        {
+            get { return _kredsNavn; }
+            set { _kredsNavn = value; }
         }
 
         // Returnerer en liste over bookinger der endnu ikke er startet

@@ -9,6 +9,7 @@
     <th>StartDato</th>
     <th>SlutDato</th>
     <th>Antal mennesker</th>
+    <th>Kreds</th>
     <th>Handlinger</th>
 </tr>
 </thead>
@@ -20,6 +21,7 @@
         <td>@booking.StartDato.ToShortDateString()</td>
         <td>@booking.SlutDato.ToShortDateString()</td>
         <td>@booking.AntalMennesker</td>
+        <td>@booking.KredsNavn</td>
         <td>
         <a href="/Booking/Edit_Booking?bookingId=@booking.BookingId" class="btn btn-warning">Rediger</a>
         <a href="/Booking/Delete_Booking?bookingId=@booking.BookingId" class="btn btn-danger">Slet</a>

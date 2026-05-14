@@ -57,7 +57,7 @@ public class Create_Booking : PageModel
             FejlBesked = "SlutDato må ikke være før startDato.";
             return Page();
         }
-        var booking = new ShelterudlejningssystemetLib.Booking(BookingId, StartDato, SlutDato, AntalMennesker);
+        var booking = new ShelterudlejningssystemetLib.Booking(BookingId, StartDato, SlutDato, AntalMennesker, "Ukendt Kreds");
         
         ShelterudlejningssystemetLib.Booking.TilføjBooking(booking);
         
