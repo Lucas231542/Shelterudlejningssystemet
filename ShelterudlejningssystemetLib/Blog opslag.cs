@@ -66,7 +66,7 @@ namespace ShelterudlejningssystemetLib
             set { _dato = value; }
         }
 
-        public string imagePath
+        public string ImagePath
         {
             get { return _imagePath; }
             set { _imagePath = value; }
@@ -120,7 +120,7 @@ namespace ShelterudlejningssystemetLib
         public override string ToString()
         {
             return "InlægID: InlægID= " + Id + ", Titel= " + Titel + ", Tekst= " + Tekst +
-                ", Dato= " + Dato + ", Billede= " + imagePath;
+                ", Dato= " + Dato + ", Billede= " + ImagePath;
         }
 
 

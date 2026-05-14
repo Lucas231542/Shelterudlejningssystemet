@@ -39,6 +39,10 @@ namespace ShelterudlejningssystemetLib
         {
             begivenheder.RemoveAll(b => b.Id == id);
         }
+        public List<Blog_opslag> HentAlleBlog()
+        {
+            return begivenheder;
+        }
 
         // Kalder en liste over Blog opslag der endnu ikke er startet
         public List<Blog_opslag> HentKommendeBlog()
@@ -65,7 +69,7 @@ namespace ShelterudlejningssystemetLib
                     b.Titel = nytitel;
                     b.Tekst = nytekst;
                     b.Dato = nydato;
-                    b.imagePath = nyimagePath;
+                    b.ImagePath = nyimagePath;
                 }
             }
         }

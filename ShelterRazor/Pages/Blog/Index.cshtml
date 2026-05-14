@@ -23,7 +23,11 @@
 					<td>@item.Titel</td>
 					<td>@item.Tekst</td>
 					<td>@item.Dato.ToShortDateString()</td>
-					<td>@item.imagePath</td>
+					<td>@item.ImagePath</td>
+					<td>
+						<a href="/Blog/Delete?Id=@item.Id" class="btn btn-danger">Slet</a>
+						<a href="/Blog/Edit?Id=@item.Id" class="btn btn-primary">Rediger</a>
+					</td>
 				</tr>
 			}
 		</tbody>

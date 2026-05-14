@@ -1,0 +1,34 @@
+﻿@page
+@model ShelterRazor.Pages.Blog.EditModel
+@{
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Rediger Blogindlæg</title>
+</head> 
+<body>
+    <div>
+        <h2>Rediger Blogindlæg</h2>
+        <form method="post">
+            <input type="hidden" asp-for="Id" />
+            <label asp-for="Titel"></label>
+            <input type="text" asp-for="Titel" />
+
+            <label asp-for="Tekst"></label>
+            <textarea asp-for="Tekst"></textarea>
+
+            <label asp-for="Dato"></label>
+            <input type="date" asp-for="Dato" />
+
+            <label asp-for="ImagePath"></label>
+            <input type="text" asp-for="ImagePath" />
+          
+            <button type="submit" asp-page-handler="Ok">Gem</button>
+            <button type="submit" asp-page-handler="Annuller">Annuller</button>
+         
+        </form>
+    </div>
+</body>
+</html>

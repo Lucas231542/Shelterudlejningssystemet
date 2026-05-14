@@ -1,0 +1,28 @@
+﻿@page
+@model ShelterRazor.Pages.Blog.DeleteModel
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+	<head>
+	<title>Slet Blogindlæg</title>
+	</head>
+	<body>
+		<div>
+			<h2>slet Blogindlæg</h2>
+		<p>Er du sikker på at du vil slette dette blogindlæg?</p>
+		<form method="post" asp-page-handler="Slet">
+			<input type="hidden" asp-for="Id" />
+			<button type="submit" class="btn btn-danger">Ja, slet</button>
+			<a href="/Blog/Index_Blog" class="btn btn-secondary">Annuller</a>
+			</form>
+
+		</div>
+
+
+	</body>
+	
+</html>
