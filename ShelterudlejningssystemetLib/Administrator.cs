@@ -8,12 +8,17 @@ public class Administrator: Bruger
     : base(id, name, tlf, email)
     
     {
-        
+        _spejderKredsService = new SpejderKredsService();
     }
     // Metode til at oprette en kreds bed brug af servicen 
     public void OpretKreds(SpejderKreds kreds)
     {
         _spejderKredsService.AddKreds(kreds);
         
+    }
+
+    public override string ToString()
+    {
+        return $"Administrator - {base.ToString()}";
     }
 }
