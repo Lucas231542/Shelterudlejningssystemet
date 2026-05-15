@@ -39,6 +39,12 @@ public class Bruger
         get { return _email; }
         set { _email = value; }
     }
+
+    public string FormatTlf()
+    {
+        string tlf =_tlf.ToString();
+        return tlf.Substring(0, 2) + " " + tlf.Substring(2, 2) + " " + tlf.Substring(4, 2) + " " + tlf.Substring(6, 2);
+    }
     
     public override string ToString ()
     {

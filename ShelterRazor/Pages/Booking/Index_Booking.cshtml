@@ -1,32 +1,40 @@
 @page
 @model ShelterRazor.Pages.Booking.Index_Booking
 
-<h1>Bookinger</h1>
-<table class="table table-hover">
-<thead>
-<tr>
-    <th>ID</th>
-    <th>StartDato</th>
-    <th>SlutDato</th>
-    <th>Antal mennesker</th>
-    <th>Kreds</th>
-    <th>Handlinger</th>
-</tr>
-</thead>
-<tbody>
-@foreach (var booking in Model.Bookinger)
-{
-    <tr>
-        <td>@booking.BookingId</td>
-        <td>@booking.StartDato.ToShortDateString()</td>
-        <td>@booking.SlutDato.ToShortDateString()</td>
-        <td>@booking.AntalMennesker</td>
-        <td>@booking.KredsNavn</td>
-        <td>
-        <a href="/Booking/Edit_Booking?bookingId=@booking.BookingId" class="btn btn-warning">Rediger</a>
-        <a href="/Booking/Delete_Booking?bookingId=@booking.BookingId" class="btn btn-danger">Slet</a>
-        </td>
-    </tr>
-}
-</tbody>
-</table>
+<div class="container mt-5">
+<div class="card shadow-sm">
+    <div class="card-header bg-dark text-white">
+        <h4 class="mb-0">Bookinger</h4>
+    </div>
+    <div class="card-body">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>StartDato</th>
+                <th>SlutDato</th>
+                <th>Antal mennesker</th>
+                <th>Kreds</th>
+                <th>Handlinger</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var booking in Model.Bookinger)
+            {
+                <tr>
+                    <td>@booking.BookingId</td>
+                    <td>@booking.StartDato.ToShortDateString()</td>
+                    <td>@booking.SlutDato.ToShortDateString()</td>
+                    <td>@booking.AntalMennesker</td>
+                    <td>@booking.KredsNavn</td>
+                    <td>
+                        <a href="/Booking/Edit_Booking?bookingId=@booking.BookingId" class="btn btn-warning">Rediger</a>
+                        <a href="/Booking/Delete_Booking?bookingId=@booking.BookingId" class="btn btn-danger">Slet</a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>

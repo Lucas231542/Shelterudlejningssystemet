@@ -1,27 +1,39 @@
 @page
 @model ShelterRazor.Pages.Booking.Create_Booking
-<h1>Opret Booking</h1>
-<form method="post">
-<table class="col-6">   
-    <tr>
-        <td><label>Booking Id</label></td>
-        <td><input type="number" asp-for="BookingId" /></td> 
-    </tr>  
-    <tr>
-        <td><label>StartDato</label></td>
-        <td><input type="date" asp-for="StartDato" /></td>
-    </tr>
-    <tr>
-        <td><label>SlutDato</label></td>
-        <td><input type="date" asp-for="SlutDato" /></td>
-    </tr> 
-    <tr>
-        <td><label>Antal mennesker</label></td>
-        <td><input type="number" asp-for="AntalMennesker" /></td>
-    </tr>
-   </table>
+<div class="container mt-5">
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow -sm">
+            <div class="card-header bg-dark text-white">
+                <h4 class="mb-o">Opret Booking</h4>
+            </div>
+            <div class="card-body">
+                <form method="post">
 
-<input type="submit" class="btn btn-success" value="opret booking" />
-<a href="/Booking/Index_Booking" class="btn btn-danger">annuller</a>
-<p style="color:red">@Model.FejlBesked</p>
-</form>$ 
+                    <div class="mb-3">
+                        <label class="form-label">Booking Id</label>
+                        <input type="number" class="form-control" asp-for="BookingId"/>
+                    </div>
+                    <div>
+                        <label class="form-label">StartDato</label>
+                        <input type="date" class="form-control" asp-for="StartDato"/>
+                    </div>
+                    <div>
+                        <label class="form-label">SlutDato</label>
+                        <input type="date" class="form-control" asp-for="SlutDato"/>
+                    </div>
+                    <div>
+                        <label class="form-label">Antal mennesker</label>
+                        <input type="number" class="form-control" asp-for="AntalMennesker"/>
+                    </div>
+                    <div class="mt-3">
+                    <input type="submit" class="btn btn-success" value="opret booking"/>
+                    <a href="/Booking/Index_Booking" class="btn btn-danger">annuller</a>
+                    </div>
+                    <p style="color:red">@Model.FejlBesked</p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
