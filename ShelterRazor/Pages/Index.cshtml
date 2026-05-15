@@ -4,7 +4,36 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="bg-dark text-white text-center py-5 rounded">
+    <h1 class="display-4">🏕Shelterudlejningssystemet</h1>
+   
+</div>
+<div class="row justify-content-center mb-4">
+    <div class="col-md-8 text-center">
+        <p class="fs-5 text-muted">Velkommen til shelterudlejningssystemet. Alt hvad du behøver til shelterudlejning. Opret og administrer nemt dine bookinger, brugere, spejderkredse, blogindlæg, FDF shelters og hold dig opdateret via bloggen. </p>
+    </div>
+</div>
+<div class="row justify-content-center g-4">
+<div class="col-md-4">
+    <div class=" card text-center shadow-sm h-100">
+        <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+                <h4 class="card-title">📆 Bookinger</h4>
+                <p class="card-text text-muted">Se bookinger for shelters</p>
+            </div>
+            <a href="/Booking/Index_Booking" class="btn btn-dark mt-3">Gå til Bookinger</a>
+        </div>
+    </div>
+</div>
+<div class="col-md-4">
+    <div class="card text-center shadow-sm h-100">
+        <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+                <h4 class="card-title">👤 Brugere</h4>
+                <p class="card-text text-muted">Se systemets brugere</p>
+            </div>
+            <a href="/Index_Bruger"class="btn btn-dark mt-3">Gå til Brugere</a>
+        </div>
+    </div>
+</div>
 </div>

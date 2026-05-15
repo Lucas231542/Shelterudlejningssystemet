@@ -1,9 +1,7 @@
 @page
 @model ShelterRazor.Pages.Booking.Create_Booking
 <div class="container mt-5">
-<div class="row justify-content-center">
-    <div class="col-md-6">
-        <div class="card shadow -sm">
+   <div class="card shadow -sm">
             <div class="card-header bg-dark text-white">
                 <h4 class="mb-o">Opret Booking</h4>
             </div>
@@ -11,29 +9,27 @@
                 <form method="post">
 
                     <div class="mb-3">
-                        <label class="form-label">Booking Id</label>
+                        <label class="form-label fw-bold">Booking Id</label>
                         <input type="number" class="form-control" asp-for="BookingId"/>
                     </div>
                     <div>
-                        <label class="form-label">StartDato</label>
+                        <label class="form-label fw-bold">StartDato</label>
                         <input type="date" class="form-control" asp-for="StartDato"/>
                     </div>
                     <div>
-                        <label class="form-label">SlutDato</label>
+                        <label class="form-label fw-bold">SlutDato</label>
                         <input type="date" class="form-control" asp-for="SlutDato"/>
                     </div>
                     <div>
-                        <label class="form-label">Antal mennesker</label>
+                        <label class="form-label fw-bold">Antal mennesker</label>
                         <input type="number" class="form-control" asp-for="AntalMennesker"/>
                     </div>
                     <div class="mt-3">
-                    <input type="submit" class="btn btn-success" value="opret booking"/>
-                    <a href="/Booking/Index_Booking" class="btn btn-danger">annuller</a>
+                    <input type="submit" class="btn btn-success" value="Opret Booking"/>
+                    <a href="/Booking/Index_Booking" class="btn btn-danger">Annuller</a>
                     </div>
                     <p style="color:red">@Model.FejlBesked</p>
                 </form>
             </div>
         </div>
     </div>
-</div>
-</div>
