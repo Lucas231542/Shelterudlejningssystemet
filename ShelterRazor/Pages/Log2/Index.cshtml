@@ -2,3 +2,27 @@
 @model ShelterRazor.Pages.Log2.IndexModel
 @{
 }
+<h1>Besøgslog</h1>
+<table class="table"
+    <thead> 
+        <tr>
+            <th>Id</th>
+            <th>Startdato</th>
+            <th>Slutdato</th>
+            <th>Tekst</th>
+            <th>ShelterId</th>
+        </tr>
+        </thead>
+        <tbody>
+            @foreach (var log in Model.Logs)
+            {
+                <tr>
+                    <td>@log.Id</td>
+                    <td>@log.Startdato</td>
+                    <td>@log.Slutdato</td>
+                    <td>@log.Tekst</td>
+                    <td>@log.ShelterId</td>
+                </tr>
+            }
+        </tbody>
+        </table>
