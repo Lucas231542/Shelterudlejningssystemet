@@ -21,13 +21,15 @@ namespace ShelterudlejningssystemetLib
             Startdato = DateTime.Now;
             Slutdato = DateTime.Now;
             Tekst = "";
+            ShelterId = 0;
         }
-        public Log(int id, DateTime startdato, DateTime slutdato, string tekst)
+        public Log(int id, DateTime startdato, DateTime slutdato, string tekst, int shelterId)
         {
             Id = id;
             Startdato = startdato;
             Slutdato = slutdato;
             Tekst = tekst;
+            ShelterId = shelterId;
         }
         public int Id
         {
