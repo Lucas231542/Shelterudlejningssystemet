@@ -11,6 +11,15 @@ public class Create_Booking : PageModel
     private DateTime _slutDato;
     private int _antalMennesker;
 
+    public Create_Booking()
+    {
+        _FejlBesked = "";
+        _bookingId = 0;
+        _startDato = DateTime.Now;
+        _slutDato = DateTime.Now;
+        _antalMennesker = 0;
+    }
+
     public string FejlBesked
     {
         get { return _FejlBesked; }
