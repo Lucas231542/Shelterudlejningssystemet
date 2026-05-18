@@ -2,10 +2,44 @@
 @model ShelterRazor.Pages.Blog.CreateModel
 @{
 }
-<h1>Create Blog Post</h1>
-<form method="post">
-	<table class="col-6">
-		<tr>
+<div class="container mt-5">
+	<div class="card shadow -sm">
+		<div class="card-header bg-dark text-white">
+			<h4 class="mb-o">Opret Blog opslag</h4>
+		</div>
+			<div class="card-body">
+				<form method="post">
+					<div class="mb-3">
+					<label class="form-label fw-bold"> Blog Id</label>
+					<input type="number" class="form-control" asp-for="@Model.Id" />
+					</div>
+					<div>
+					<label class="form-label fw-bold"> Blog Titel</label>
+					<input type="text" class="form-control" asp-for="@Model.Titel" />
+					</div>
+					<div>
+					<label class="form-label fw-bold"> Blog Tekst</label>
+					<input type="text" class="form-control" asp-for="@Model.Tekst" />
+					</div>
+					<div>
+					<label class="form-label fw-bold"> Blog Dato</label>
+					<input type="date" class="form-control" asp-for="@Model.Dato" />
+					</div>
+					<div>
+					<label class="form-label fw-bold">Blog Image Path</label>
+					<input type="text" class="form-control" asp-for="@Model.ImagePath" />
+					</div>
+
+
+				<input type="submit" class="btn btn-success" value="opret blog opslag" asp-page-handler="Ok" />
+				<input type="submit" class="btn btn-danger" value="annuller" asp-page-handler="Cancel" />
+
+			</form>
+		</div>
+	</div>
+	</div>
+
+	@* 	<tr>
 			<td>
 				<label>Blog Id</label>
 			</td>
@@ -49,9 +83,6 @@
 			</td>
 		</tr>
 
-	</table>
+	</table> *@
 
-	<input type="submit" class="btn btn-success" value="opret blog opslag" asp-page-handler="Ok"/>
-	<input type="submit" class="btn btn-danger" value="annuller" asp-page-handler="Cancel" />
-
-</form>
+	
