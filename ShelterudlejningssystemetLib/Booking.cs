@@ -70,9 +70,9 @@ namespace ShelterudlejningssystemetLib
             get { return _antalMennesker; }
             set
             {
-                if (value < 0)
+                if (value < 0 || value > 5)
                 {
-                    throw new ArgumentException("AntalMennesker value can't be negative");
+                    throw new ArgumentException("AntalMennesker value must be between 0 and 5.");
                 }
 
                 _antalMennesker = value;
