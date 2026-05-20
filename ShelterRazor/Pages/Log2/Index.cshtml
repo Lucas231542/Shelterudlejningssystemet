@@ -3,7 +3,7 @@
 @{
 }
 <h1>Besøgslog</h1>
-<table class="table"
+<table class="table">
     <thead> 
         <tr>
             <th>Id</th>
@@ -23,6 +23,13 @@
                     <td>@log.Tekst</td>
                     <td>@log.ShelterId</td>
                 </tr>
+
+            <td>
+                <a asp-page="Delete" asp-route-id="@log.Id">
+                    Slet
+                </a>
+            </td>
             }
         </tbody>
         </table>
+      

@@ -11,6 +11,11 @@ namespace ShelterRazor.Pages.Spejderkredse
         private string _name;
         private int _medlemmer;
 
+
+        public Edit_SpejderKredseModel(ISpejderKredsService service)
+        {
+            _service = service;
+        }
         [BindProperty]
         public int KredsId
         {
@@ -37,10 +42,7 @@ namespace ShelterRazor.Pages.Spejderkredse
                 _medlemmer = value;
             }
         }
-        public Edit_SpejderKredseModel(ISpejderKredsService service)
-        {
-            _service = service;
-        }
+       
 
         public void OnGet(int kredsId)
         {

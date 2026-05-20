@@ -12,6 +12,14 @@ namespace ShelterRazor.Pages.Blog
         private string _tekst;
         private DateTime _dato;
         private string _imagePath;
+        private readonly IWebHostEnvironment _env;
+
+        public EditModel(BlogListe service, IWebHostEnvironment env)
+        {
+            _service = service;
+            _env = env;
+        }
+        public List<string> ImageFiles { get; set; }
 
         [BindProperty]
         public int Id
@@ -47,11 +55,7 @@ namespace ShelterRazor.Pages.Blog
             get { return _imagePath; }
             set { _imagePath = value; }
         }
-        public EditModel(BlogListe service)
-        {
-            _service = service;
-        }
-
+     
         public void OnGet(int id)
         {
             foreach (var k in _service.HentAlleBlog())
@@ -62,7 +66,8 @@ namespace ShelterRazor.Pages.Blog
                     Titel = k.Titel;
                     Tekst = k.Tekst;
                     Dato = k.Dato;
-                    ImagePath = k.ImagePath;
+                    string imagePath = Path.Combine(_env.WebRootPath, "images");
+                    ImageFiles = Directory.GetFiles(imagePath).Select(f => "/images/" + Path.GetFileName(f)).ToList();
                 }
             }
         }
