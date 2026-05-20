@@ -1,20 +1,24 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ShelterudlejningssystemetLib;
+using System.IO;
+using System.Linq;
 
 namespace ShelterRazor.Pages.Blog
 {
     public class CreateModel : PageModel
     {
+        private readonly IWebHostEnvironment _env;
         private BlogListe _Opslag;
 
-        public CreateModel(BlogListe opslag)
+        public CreateModel(BlogListe opslag, IWebHostEnvironment env)
         {
             _Opslag = opslag;
+            _env = env;
             Dato = DateTime.Now;        // Dette gør at startdatoen som kan vælges er den nuværende dato, så man ikke starter fra år 1
         }
 
-
+        public List<string> ImageFiles { get; set; }
         public BlogListe Opslag
         {
             get { return _Opslag; }
@@ -61,6 +65,8 @@ namespace ShelterRazor.Pages.Blog
         }
         public void OnGet()
         {
+            string imagePath = Path.Combine(_env.WebRootPath, "images");
+            ImageFiles = Directory.GetFiles(imagePath).Select(f => "/images/" + Path.GetFileName(f)).ToList();
         }
 
         public IActionResult OnPostOk()

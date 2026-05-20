@@ -11,25 +11,38 @@
 				<form method="post">
 					<div class="mb-3">
 					<label class="form-label fw-bold"> Blog Id</label>
-					<input type="number" class="form-control" asp-for="@Model.Id" />
+					<input type="number" class="form-control" asp-for="Id" />
 					</div>
 					<div>
 					<label class="form-label fw-bold"> Blog Titel</label>
-					<input type="text" class="form-control" asp-for="@Model.Titel" />
+					<input type="text" class="form-control" asp-for="Titel" />
 					</div>
 					<div>
 					<label class="form-label fw-bold"> Blog Tekst</label>
-					<input type="text" class="form-control" asp-for="@Model.Tekst" />
+					<input type="text" class="form-control" asp-for="Tekst" />
 					</div>
 					<div>
 					<label class="form-label fw-bold"> Blog Dato</label>
-					<input type="date" class="form-control" asp-for="@Model.Dato" />
+					<input type="date" class="form-control" asp-for="Dato" />
 					</div>
 					<div>
-					<label class="form-label fw-bold">Blog Image Path</label>
-					<input type="text" class="form-control" asp-for="@Model.ImagePath" />
+					<label class="form-label fw-bold"> Blog Image</label>
+					<select class="form-select" asp-for="ImagePath">
+						@foreach (var image in Model.ImageFiles)
+						{
+							<option value="@image">@image</option>
+						}
+					</select>
 					</div>
-			
+
+				@* se billederne i wwwroot/Images og vælg en af dem til at være blog opslagets billede *@
+				<div class="mb-3">
+					<img id="previewImage" src="@Model.ImagePath" alt="Preview" width="150" height="160" />
+				</div>
+
+				
+				@* <input type="text" class="form-control" asp-for="@Model.ImagePath" /> *@
+
 
 				<input type="submit" class="btn btn-success" value="opret blog opslag" asp-page-handler="Ok" /> 
 				<input type="submit" class="btn btn-danger" value="annuller" asp-page-handler="Cancel" />
@@ -39,50 +52,11 @@
 	</div>
 	</div>
 
-	@* 	<tr>
-			<td>
-				<label>Blog Id</label>
-			</td>
-			<td>
-				<input type="number" asp-for="@Model.Id" />
-			</td>
-			
-		</tr>
-		<tr>
-			<td>
-				<label>Blog Titel</label>
-			</td>
-			<td>
-				<input type="text" asp-for="@Model.Titel" />
-			</td>
-			
-		</tr>
-		<tr>
-			<td>
-				<label>Blog tekst</label>
-			</td>
-			<td>
-				<input type="text" asp-for="@Model.Tekst" />
-			</td>
-			
-		</tr>
-		<tr>
-			<td>
-				<label>Blog Dato</label>
-			</td>
-			<td>
-				<input type="date" asp-for="@Model.Dato" />
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<label>Blog Image Path</label>
-			</td>
-			<td>
-				<input type="text" asp-for="@Model.ImagePath" />
-			</td>
-		</tr>
-
-	</table> *@
-
-	
+	@* dette gør at jeg kan se preview af det valgte billede *@
+	<script>
+		const imageSelect = document.getElementById('ImagePath'); // den får for billdeet ud fra billedets id i imagePath
+		const previewImage = document.getElementById('previewImage'); // den viser det valgte billede i previewImage
+		imageSelect.addEventListener('change', function() {
+			previewImage.src = this.value;
+	});
+	</script>
