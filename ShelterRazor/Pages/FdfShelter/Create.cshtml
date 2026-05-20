@@ -1,0 +1,38 @@
+﻿@page
+@model ShelterRazor.Pages.FdfShelter.CreateModel
+
+<h1>Opret Shelter</h1>
+
+<form method="post">
+
+    <div>
+        <label>ID</label>
+        <input asp-for="Shelter.ShelterId" />
+    </div>
+
+    <div>
+        <label>Navn</label>
+        <input asp-for="Shelter.ShelterNavn"/>
+    </div>
+
+    <div>
+        <label>Lokation</label>
+        <input asp-for="Shelter.Lokation"/>
+    </div>
+
+    <div>
+        <label>Størrelse</label>
+        <input asp-for="Shelter.Størrelse" />
+    </div>
+
+    <div>
+        <label>PostNummer</label>
+        <input asp-for="Shelter.PostNummer" />
+    </div>
+
+    <button type="submit">
+        Opret
+    </button>
+
+
+</form>
