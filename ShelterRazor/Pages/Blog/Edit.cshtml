@@ -22,8 +22,13 @@
             <label asp-for="Dato"></label>
             <input type="date" asp-for="Dato" />
 
-            <label asp-for="ImagePath"></label>
-            <input type="text" asp-for="ImagePath" />
+            <select class="form-select" asp-for="ImagePath">
+                @foreach (var image in Model.ImageFiles)
+                {
+                    <option value="@image"> @image</option>
+				}
+                </select>
+
           
             <button type="submit" asp-page-handler="Ok">Gem</button>
             <button type="submit" asp-page-handler="Annuller">Annuller</button>
