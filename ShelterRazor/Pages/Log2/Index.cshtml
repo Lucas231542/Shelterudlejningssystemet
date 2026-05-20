@@ -22,13 +22,10 @@
                     <td>@log.Slutdato</td>
                     <td>@log.Tekst</td>
                     <td>@log.ShelterId</td>
+                    <td>
+                        <a href="/Log2/Delete?Id=@log.Id" class="btn btn-danger">Slet</a>
+                    </td>
                 </tr>
-
-            <td>
-                <a asp-page="Delete" asp-route-id="@log.Id">
-                    Slet
-                </a>
-            </td>
             }
         </tbody>
         </table>
