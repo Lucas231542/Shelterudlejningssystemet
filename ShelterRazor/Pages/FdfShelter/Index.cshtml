@@ -3,6 +3,7 @@
 @{
 }
 <h1>Information om FDF Shelters</h1>
+<a asp-page="Create">Opret Shelter</a>
 <div class="row">
 	<table class="table table-hover">
 		<thead>
@@ -12,10 +13,11 @@
 				<th>Lokation</th>
 				<th>Størrelse</th>
 				<th>Post Nummer</th>
+				<th>Slet</th>
 			</tr>
 		</thead>
 		<tbody>
-			@foreach (var shelter in Model.Shelters)
+			@foreach (var shelter in IndexModel.Shelters)
 			{
 				<tr>
 					<td>@shelter.ShelterNavn</td>
@@ -23,6 +25,16 @@
 					<td>@shelter.Lokation</td>
 					<td>@shelter.Størrelse</td>
 					<td>@shelter.PostNummer</td>
+					<td>
+						<form method ="post">
+							<button type ="submit"
+								asp-page-handler="Delete"
+								asp-route-id="@shelter.ShelterId">
+							Slet
+							</button>
+
+						</form>
+					</td>
 				</tr>
 				}
 	

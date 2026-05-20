@@ -136,6 +136,8 @@ namespace ShelterudlejningssystemetLib
         {
             return new List<Booking>(Bookinger);
         }
+
+     
     }
 }
 
