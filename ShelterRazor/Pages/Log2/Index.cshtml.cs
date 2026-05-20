@@ -12,20 +12,6 @@ namespace ShelterRazor.Pages.Log2
         {
             _service = new LogService();
 
-
-            _service.Addlog(new Log(
-                1,
-                DateTime.Now,
-                DateTime.Now.AddDays(1),
-                "Spejdertur",
-                101));
-
-            _service.Addlog(new Log(
-                2,
-                DateTime.Now,
-                DateTime.Now.AddDays(2),
-                "Blåaften",
-                102));
         
         }
         public void OnGet()

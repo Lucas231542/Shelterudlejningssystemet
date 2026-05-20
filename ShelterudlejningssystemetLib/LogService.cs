@@ -7,11 +7,11 @@ namespace ShelterudlejningssystemetLib
 {
     public class LogService
     {
-        private List<Log> _logs;
+        private static List<Log> _logs = new List<Log>();
 
         public LogService()
         {
-            _logs  = new List<Log>();
+
         }
         public void Addlog(Log log)
         {
