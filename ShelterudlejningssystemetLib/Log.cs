@@ -7,9 +7,9 @@ using System.Text;
 namespace ShelterudlejningssystemetLib
  
 {
-    // Instans felter 
     public class Log
     {
+        // Instans felter 
         private int _id;
         private DateTime _startdato;
         private DateTime _slutdato;
@@ -17,7 +17,6 @@ namespace ShelterudlejningssystemetLib
         private int _shelterId;     
 
         // Konstruktør
-
         public Log()
         {
             Id = 0;
@@ -26,7 +25,7 @@ namespace ShelterudlejningssystemetLib
             Tekst = "";
             ShelterId = 0;
 
-            // Konstruktør med paramtre
+         // Konstruktør med paramtre
         }
         public Log(int id, DateTime startdato, DateTime slutdato, string tekst, int shelterId)
         {
@@ -36,7 +35,7 @@ namespace ShelterudlejningssystemetLib
             Tekst = tekst;
             ShelterId = shelterId;
 
-            // Properties
+         // Properties
         }
         public int Id
         {
