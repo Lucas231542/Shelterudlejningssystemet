@@ -9,7 +9,7 @@ namespace ShelterudlejningssystemetLib
     public class FDF_Shelter
     {
 
-        // Instansfelter
+        // Instansfelter gemmer data om shelter
         private int _shelterId;
         private string _shelterNavn;
         private string _lokation;
@@ -19,8 +19,8 @@ namespace ShelterudlejningssystemetLib
      
 
 
-        // Konstruktør
-        public FDF_Shelter()
+        // Konstruktør 
+        public FDF_Shelter() // tom konstruktør bruges til razor pages
         {
             ShelterId = 0;
             ShelterNavn = "";
@@ -31,7 +31,7 @@ namespace ShelterudlejningssystemetLib
           
 
         }
-
+        // Opretter shelter med værdier
         public FDF_Shelter(int shelterId, string shelterNavn, string lokation, int størrelse, int postNummer)
         {
             ShelterId = shelterId;
@@ -89,19 +89,19 @@ namespace ShelterudlejningssystemetLib
         }
 
 
-        public List<Booking> Bookinger
+        public List<Booking> Bookinger //Liste med shelterbooking
         {
             get { return _bookinger; }
             set { _bookinger = value; }
         }
 
         
-        public override string ToString()
+        public override string ToString() // returnerer shelter information
         {
             return " ShelterId: " + ShelterId + " ShelterNavn: " + ShelterNavn + " Lokation: " + Lokation + " Størrelse: " + Størrelse + " PostNummer: " + PostNummer;
         }
 
-        public bool TilføjBooking(Booking booking) 
+        public bool TilføjBooking(Booking booking)  // Tilføjer booking hvis periode er ledig
         {
 
             if (booking == null) return false;
@@ -115,7 +115,7 @@ namespace ShelterudlejningssystemetLib
             return false;
         }
 
-        public bool ErLedigPeriode(DateTime start, DateTime slut)
+        public bool ErLedigPeriode(DateTime start, DateTime slut) // tjekker om shelter er ledigt  i periode
         {
             if (start > slut)
             {
@@ -132,7 +132,7 @@ namespace ShelterudlejningssystemetLib
             return true;
         }
 
-        public  List<Booking> HentBookinger()
+        public  List<Booking> HentBookinger() // returnere en liste over bookinger
         {
             return new List<Booking>(Bookinger);
         }
