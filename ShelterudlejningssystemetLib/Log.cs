@@ -36,7 +36,7 @@ namespace ShelterudlejningssystemetLib
             Tekst = tekst;
             ShelterId = shelterId;
 
-            // Property
+            // Properties
         }
         public int Id
         {
