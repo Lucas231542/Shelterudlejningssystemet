@@ -5,8 +5,9 @@ using System.Globalization;
 using System.Text;
 
 namespace ShelterudlejningssystemetLib
-//Aleks Log 
+ 
 {
+    // Instans felter 
     public class Log
     {
         private int _id;
@@ -15,6 +16,8 @@ namespace ShelterudlejningssystemetLib
         private string _tekst;
         private int _shelterId;     
 
+        // Konstruktør
+
         public Log()
         {
             Id = 0;
@@ -22,6 +25,8 @@ namespace ShelterudlejningssystemetLib
             Slutdato = DateTime.Now;
             Tekst = "";
             ShelterId = 0;
+
+            // Konstruktør med paramtre
         }
         public Log(int id, DateTime startdato, DateTime slutdato, string tekst, int shelterId)
         {
@@ -30,6 +35,8 @@ namespace ShelterudlejningssystemetLib
             Slutdato = slutdato;
             Tekst = tekst;
             ShelterId = shelterId;
+
+            // Property
         }
         public int Id
         {
@@ -62,6 +69,8 @@ namespace ShelterudlejningssystemetLib
             get { return _shelterId; }
             set { _shelterId = value; }
         }
+
+        // Metode der laver objekt om til tekst
         public override string ToString()
         {
             return "Id:" + Id + ", Startdato:" + Startdato + ", Slutdato:" + Slutdato + ", Tekst:" + Tekst + ", ShelterId:" + ShelterId;
