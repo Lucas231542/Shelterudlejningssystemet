@@ -10,14 +10,18 @@ public class Create_Booking : PageModel
     private DateTime _startDato;
     private DateTime _slutDato;
     private int _antalMennesker;
+    
+    private BookingListe _bookingListe;
 
-    public Create_Booking()
+    public Create_Booking(BookingListe bookingListe)
     {
         _FejlBesked = "";
         _bookingId = 0;
         _startDato = DateTime.Now;
         _slutDato = DateTime.Now;
         _antalMennesker = 0;
+        
+        _bookingListe = bookingListe;
     }
 
     public string FejlBesked
@@ -74,7 +78,7 @@ public class Create_Booking : PageModel
         }
         var booking = new ShelterudlejningssystemetLib.Booking(BookingId, StartDato, SlutDato, AntalMennesker, "Ukendt Kreds");
         
-        ShelterudlejningssystemetLib.Booking.TilføjBooking(booking);
+        _bookingListe.TilføjBooking(booking);
         
         return RedirectToPage("/Booking/Index_Booking");    
     }

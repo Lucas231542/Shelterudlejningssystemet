@@ -4,12 +4,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddSingleton<BookingListe>();
 
 bool TestData = true;
 List<Blog_opslag> Blog_opslagListe = new List<Blog_opslag>();
 if (TestData)
 {
-    Blog_opslag opslag1 = new Blog_opslag(1, "Blog opslag 1", "Dette er det første blog opslag",new DateTime(2026, 8, 8), "path/to/image1.jpg");
+    Blog_opslag opslag1 = new Blog_opslag(1, "Blog opslag 1", "Dette er det fï¿½rste blog opslag",new DateTime(2026, 8, 8), "path/to/image1.jpg");
     Blog_opslag opslag2 = new Blog_opslag(2, "Blog opslag 2", "Dette er det andet blog opslag", new DateTime(2027, 3, 20), "path/to/image2.jpg");
     Blog_opslag opslag3 = new Blog_opslag(3, "Blog opslag 3", "Dette er det tredje blog opslag", DateTime.Now, "path/to/image3.jpg");
 

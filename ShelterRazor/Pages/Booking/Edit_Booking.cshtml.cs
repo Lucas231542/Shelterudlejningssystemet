@@ -11,6 +11,13 @@ public class Edit_Booking : PageModel
     private int _antalMennesker;
     private string _fejlBesked;
     
+    private BookingListe _bookingListe;
+
+    public Edit_Booking(BookingListe bookingListe)
+    {
+        _bookingListe = bookingListe;
+    }
+    
     [BindProperty]
     public int BookingId
     {
@@ -49,7 +56,7 @@ public class Edit_Booking : PageModel
 
     public void OnGet(int bookingId)
     {
-        foreach ( var b in ShelterudlejningssystemetLib.Booking.HentAlleBookinger())       
+        foreach ( var b in _bookingListe.HentAlleBookinger())       
         {                                                                                      
             if (b.BookingId == bookingId)                                                      
             {                                                                                  
@@ -70,7 +77,7 @@ public class Edit_Booking : PageModel
             return Page();
         }
         
-            ShelterudlejningssystemetLib.Booking.RedigerBooking(BookingId, StartDato, SlutDato, AntalMennesker);
+            _bookingListe.RedigerBooking(BookingId, StartDato, SlutDato, AntalMennesker);
             return RedirectToPage("/Booking/Index_Booking");
         }
 

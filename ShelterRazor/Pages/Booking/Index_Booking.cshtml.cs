@@ -8,6 +8,13 @@ namespace ShelterRazor.Pages.Booking;
 public class Index_Booking : PageModel
 {
     private List<ShelterudlejningssystemetLib.Booking> _bookinger;
+    
+    private BookingListe _bookingListe;
+
+    public Index_Booking(BookingListe bookingListe)
+    {
+        _bookingListe = bookingListe;
+    }
 
     public List<ShelterudlejningssystemetLib.Booking> Bookinger
     {
@@ -18,18 +25,18 @@ public class Index_Booking : PageModel
 
     public void OnGet()
     {
-        if (ShelterudlejningssystemetLib.Booking.HentAlleBookinger().Count == 0)
+        if (_bookingListe.HentAlleBookinger().Count == 0)
 
         {
-            BookingLib.TilføjBooking(new BookingLib(1, DateTime.Now.AddDays(5), DateTime.Now.AddDays(7), 10,
+            _bookingListe.TilføjBooking(new BookingLib(1, DateTime.Now.AddDays(5), DateTime.Now.AddDays(7), 10,
                 "København Kreds"));
-            BookingLib.TilføjBooking(new BookingLib(2, DateTime.Now.AddDays(10), DateTime.Now.AddDays(12), 5,
+            _bookingListe.TilføjBooking(new BookingLib(2, DateTime.Now.AddDays(10), DateTime.Now.AddDays(12), 5,
                 "Roskilde Kreds"));
-            BookingLib.TilføjBooking(new BookingLib(3, DateTime.Now.AddDays(20), DateTime.Now.AddDays(22), 8,
+            _bookingListe.TilføjBooking(new BookingLib(3, DateTime.Now.AddDays(20), DateTime.Now.AddDays(22), 8,
                 "Køge Kreds"));
 
             
         }
-        Bookinger = ShelterudlejningssystemetLib.Booking.HentKommendeBookinger();
+        Bookinger = _bookingListe.HentKommendeBookinger();
     }
 }

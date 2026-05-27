@@ -85,54 +85,6 @@ namespace ShelterudlejningssystemetLib
             set { _kredsNavn = value; }
         }
 
-        // Returnerer en liste over bookinger der endnu ikke er startet
-        public static List<Booking> HentKommendeBookinger()
-        {
-            List<Booking> kommendeBookinger = new List<Booking>();
-            foreach (Booking b in _alleBookinger)
-            {
-                if (b.StartDato > DateTime.Now)
-                {
-                    kommendeBookinger.Add(b);
-                }
-            }
-
-            return kommendeBookinger;
-        }
-
-        public static List<Booking> HentAlleBookinger()
-        {
-            return _alleBookinger;
-        }
-
-
-        // Tilføjer en booking til listen over alle bookinger 
-        public static void TilføjBooking(Booking booking)
-        {
-            _alleBookinger.Add(booking);
-        } 
-        
-        // Sletter en booking fra listen baseret på bookingId 
-
-        public static void SletBooking(int bookingId)
-        {
-            _alleBookinger.RemoveAll(b => b.BookingId == bookingId);
-        }
-
-        // Redigere en eksisterende booking med nye værdier 
-        public static void RedigerBooking(int bookingId, DateTime nyStartDato, DateTime nySlutDato,
-            int nyAntalMennekser)
-        {
-            foreach (Booking b in _alleBookinger)
-            {
-                if (b.BookingId == bookingId)
-                {
-                    b.StartDato = nyStartDato;
-                    b.SlutDato = nySlutDato;
-                    b.AntalMennesker = nyAntalMennekser;
-                }
-            }
-        }
 
         // Metoder
         public override string ToString()
