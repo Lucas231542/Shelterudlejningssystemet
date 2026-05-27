@@ -11,11 +11,12 @@ namespace ShelterudlejningssystemetLib
         // Liste der gemmer alle Logs
         private static List<Log> _logs = new List<Log>();
 
-        // Konstruktør 
+        // Konstruktør der tilføjer testdata 
         public LogService()
         {
             if (_logs.Count == 0)
             {
+
                 _logs.Add(new Log(
                     1,
                     DateTime.Now,
