@@ -2,43 +2,46 @@
 @model ShelterRazor.Pages.FdfShelter.IndexModel
 @{
 }
-<h1>Information om FDF Shelters</h1>
-<a asp-page="Create">Opret Shelter</a>
-<div class="row">
-	<table class="table table-hover">
-		<thead>
-			<tr>
-				<th>Shelter Navn</th>
-				<th>Shelter ID</th>
-				<th>Lokation</th>
-				<th>Størrelse</th>
-				<th>Post Nummer</th>
-				<th>Slet</th>
-			</tr>
-		</thead>
-		<tbody>
-			@foreach (var shelter in IndexModel.Shelters)
-			{
+<div class="container mt-5">
+<div class="card shadow-sm">
+	<div class="card-header bg-dark text-white">
+		<h4 class="mb-0">Information om FDF Shelters</h4>
+	</div>
+	<div class="card-body">
+		<a asp-page="Create" class="btn btn-success mb-3">Opret Shelter</a>
+		<div class="table-responsive">
+			<table class="table table-striped">
+				<thead>
 				<tr>
-					<td>@shelter.ShelterNavn</td>
-					<td>@shelter.ShelterId</td>
-					<td>@shelter.Lokation</td>
-					<td>@shelter.Størrelse</td>
-					<td>@shelter.PostNummer</td>
-					<td>
-						<form method ="post">
-							<button type ="submit"
-								asp-page-handler="Delete"
-								asp-route-id="@shelter.ShelterId">
-							Slet
-							</button>
-
-						</form>
-					</td>
+					<th>Shelter Navn</th>
+					<th>Shelter ID</th>
+					<th>Lokation</th>
+					<th>Størrelse</th>
+					<th>Post Nummer</th>
+					<th>Slet</th>
 				</tr>
+				</thead>
+				<tbody>
+				@foreach (var shelter in IndexModel.Shelters)
+				{
+					<tr>
+						<td>@shelter.ShelterNavn</td>
+						<td>@shelter.ShelterId</td>
+						<td>@shelter.Lokation</td>
+						<td>@shelter.Størrelse</td>
+						<td>@shelter.PostNummer</td>
+						<td>
+							<form method ="post">
+								<button type ="submit" class="btn btn-danger btn-sm" asp-page-handler="Delete" asp-route-id="@shelter.ShelterId">Slet</button>
+							</form>
+						</td>
+					</tr>
 				}
 	
-		</tbody>
-	</table>
+				</tbody>
+			</table>
 
+		</div>
+	</div>
+</div>
 </div>

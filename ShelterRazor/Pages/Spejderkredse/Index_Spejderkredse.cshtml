@@ -3,29 +3,37 @@
 @model ShelterRazor.Pages.Spejderkredse.Index_SpejderkredseModel
 @{
 }
-<h1>Spejderkredse</h1>
-<div class="row">
-	<table class="table table-striped table-bordered">
-		<thead>
-			<tr>
-				<th>KredsId</th>
-				<th>Name</th>
-				<th>Medlemmer</th>
-			</tr>
-		</thead>
-		<tbody>
-			@foreach (SpejderKreds item in Model.SpejderKredsService.GetAll())
-			{
+<div class="container mt-5">
+<div class="card shadow-sm">
+	<div class="card-header bg-dark text-white">
+		<h4 class="mb-0">Spejderkredse</h4>
+	</div>
+	<div class="card-body">
+		<div class="table-responsive">
+			<table class="table table-striped">
+				<thead>
 				<tr>
-					<td>@item.KredsId</td>
-					<td>@item.Name</td>
-					<td>@item.Medlemmer</td>
-					<td>
-						<a href="/Spejderkredse/Delete_SpejderKredse?kredsId=@item.KredsId" class="btn btn-danger">Slet</a>
-						<a href="/Spejderkredse/Edit_SpejderKredse?kredsId=@item.KredsId" class="btn btn-primary">Rediger</a>
-				    </td>
+					<th>KredsId</th>
+					<th>Name</th>
+					<th>Medlemmer</th>
 				</tr>
-			}
-		</tbody>
-	</table>
+				</thead>
+				<tbody>
+				@foreach (SpejderKreds item in Model.SpejderKredsService.GetAll())
+				{
+					<tr>
+						<td>@item.KredsId</td>
+						<td>@item.Name</td>
+						<td>@item.Medlemmer</td>
+						<td>
+							<a href="/Spejderkredse/Delete_SpejderKredse?kredsId=@item.KredsId" class="btn btn-danger">Slet</a>
+							<a href="/Spejderkredse/Edit_SpejderKredse?kredsId=@item.KredsId" class="btn btn-primary">Rediger</a>
+						</td>
+					</tr>
+				}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
 </div>

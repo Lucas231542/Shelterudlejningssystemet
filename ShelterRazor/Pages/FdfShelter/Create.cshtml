@@ -1,38 +1,42 @@
 ﻿@page
 @model ShelterRazor.Pages.FdfShelter.CreateModel
 
-<h1>Opret Shelter</h1>
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header bg-dark text-white">
+            <h4 class="mb-0">Opret Shelter</h4>
+        </div>
+        <div class="card-body">
+            <form method="post">
 
-<form method="post">
+            <div class="mb-3">
+                <label class="form-label fw-bold">ID</label>
+                <input asp-for="Shelter.ShelterId" class="form-control"/>
+            </div>
 
-    <div>
-        <label>ID</label>
-        <input asp-for="Shelter.ShelterId" />
+            <div class="mb-3">
+                <label class="form-label fw-bold">Navn</label>
+                <input asp-for="Shelter.ShelterNavn" class="form-control"/>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-bold">Lokation</label>
+                <input asp-for="Shelter.Lokation" class="form-control"/>
+            </div>
+            <div class="mb-3">
+                <label class="form-label fw-bold">Størrelse</label> 
+                <input asp-for="Shelter.Størrelse" class="form-control"/>
+            </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Postnummer</label>
+                    <input asp-for="Shelter.PostNummer" class="form-control"/>
+                </div>
+
+                <div class="mt-3">
+                    <input type="submit" class="btn btn-success" value="Opret"/>
+                    <a href="/FdfShelter" class="btn btn-danger">Annuller</a>
+                </div>
+            </form>
+        </div>
     </div>
-
-    <div>
-        <label>Navn</label>
-        <input asp-for="Shelter.ShelterNavn"/>
-    </div>
-
-    <div>
-        <label>Lokation</label>
-        <input asp-for="Shelter.Lokation"/>
-    </div>
-
-    <div>
-        <label>Størrelse</label>
-        <input asp-for="Shelter.Størrelse" />
-    </div>
-
-    <div>
-        <label>PostNummer</label>
-        <input asp-for="Shelter.PostNummer" />
-    </div>
-
-    <button type="submit">
-        Opret
-    </button>
-
-
-</form>
+</div>

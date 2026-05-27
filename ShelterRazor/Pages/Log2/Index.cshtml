@@ -2,18 +2,25 @@
 @model ShelterRazor.Pages.Log2.IndexModel
 @{
 }
-<h1>Besøgslog</h1>
-<table class="table">
-    <thead> 
-        <tr>
-            <th>Id</th>
-            <th>Startdato</th>
-            <th>Slutdato</th>
-            <th>Tekst</th>
-            <th>ShelterId</th>
-        </tr>
-        </thead>
-        <tbody>
+<div class="container mt-5">
+<div class="card shadow-sm">
+    <div class="card-header bg-dark text-white">
+        <h4 class="mb-0">Besøgslog</h4>
+    </div>
+<div class="card-body">
+    <div class="table-responsive">
+        <table class="table table-striped">
+
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Startdato</th>
+                <th>Slutdato</th>
+                <th>Tekst</th>
+                <th>ShelterId</th>
+            </tr>
+            </thead>
+            <tbody>
             @foreach (var log in Model.Logs)
             {
                 <tr>
@@ -27,6 +34,9 @@
                     </td>
                 </tr>
             }
-        </tbody>
+            </tbody>
         </table>
-      
+    </div>
+</div>
+</div>
+</div>
