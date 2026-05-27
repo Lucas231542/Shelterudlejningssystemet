@@ -14,7 +14,21 @@ namespace ShelterudlejningssystemetLib
         // Konstruktør 
         public LogService()
         {
-
+            if (_logs.Count == 0)
+            {
+                _logs.Add(new Log(
+                    1,
+                    DateTime.Now,
+                    DateTime.Now.AddDays(1),
+                    "Spejdertur i skoven",
+                    101));
+                _logs.Add(new Log(
+                    2,
+                    DateTime.Now.AddDays(2),
+                    DateTime.Now.AddDays(3),
+                    "Bålaften med kredsen",
+                    102));
+            }
         }
 
         // Metode til at tilføje en Log 
